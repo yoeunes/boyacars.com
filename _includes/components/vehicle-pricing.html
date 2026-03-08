@@ -1,0 +1,43 @@
+<aside class="rounded-lg bg-white shadow-lg">
+  <div class="flex rounded-t-lg items-center px-6 py-4 text-white bg-primary">
+    <i class="text-3xl fa-solid fa-car"></i>
+    <h3 class="ml-4 text-2xl font-semibold">Réserver plus, économisez plus</h3>
+  </div>
+
+  <div class="my-4 animate-fade-in-down p-4">
+    {% for rate in page.rates %}
+      <div class="my-6 grid grid-cols-2 bg-gray-100 p-4 shadow-md transform transition duration-200 ease-in hover:scale-105 rounded-lg">
+        <div class="flex items-center justify-center mb-4 sm:mb-0 sm:mr-4">
+          <i class="fa-solid fa-calendar-day text-primary text-2xl"></i>
+          <span class="ml-4 text-gray-800 font-semibold">
+            {% if rate.duration == 1 %}
+              1 jour
+            {% else %}
+              {{ rate.duration }} jours ou plus
+            {% endif %}
+          </span>
+        </div>
+        <div class="flex items-center justify-center">
+          <i class="fa-solid fa-money-bill-wave text-primary text-2xl"></i>
+          <span class="ml-4 font-bold text-primary whitespace-nowrap text-lg">{{ rate.price }}</span>
+          <strong class="ml-1 text-gray-800 font-semibold text-lg">DH</strong>
+        </div>
+      </div>
+    {% endfor %}
+
+    <p class="mt-4 text-sm font-semibold text-center">
+      Ajoutez plus de jours pour bénéficier de tarifs réduits !
+    </p>
+
+    <div class="flex items-center bg-gray-100 mt-4 p-4 rounded">
+      <i class="fa-solid fa-bullhorn text-primary text-4xl mr-4"></i>
+      <p class="text-sm">
+        Les réductions saisonnières et pour plusieurs jours sont automatiquement appliquées lorsqu'elles s'appliquent à la réservation.
+      </p>
+    </div>
+
+    <a class="inline-block w-full align-middle text-center font-semibold whitespace-nowrap rounded-lg bg-primary hover:bg-primary-dark text-white mt-4 py-3 px-4 leading-tight text-2xl transition-colors" href="https://wa.me/{{ site.data.site.contact.whatsapp }}">
+      <i class="fa-solid fa-phone mr-2"></i>{{ site.data.site.contact.phone }}
+    </a>
+  </div>
+</aside>

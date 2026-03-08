@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  {% include head.html %}
+</head>
+<body class="overflow-x-hidden bg-white text-gray-800 antialiased font-roboto">
+  <div class="preloader" data-controller="preloader">
+    <span class="spinner"></span>
+  </div>
+
+  {% include header.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script type="module" src="/assets/vite/main.js"></script>
+</body>
+</html>

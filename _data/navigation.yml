@@ -1,0 +1,7 @@
+main:
+  - title: "Accueil"
+    url: "/"
+  - title: "Parc auto"
+    url: "/parc/"
+  - title: "Contactez-nous"
+    url: "/contact/"

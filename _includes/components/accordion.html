@@ -1,0 +1,29 @@
+<section class="flex container mx-auto relative overflow-hidden">
+  <div class="lg:w-1/2 my-16 sm:px-4">
+    <div class="pr-4 pl-4">
+      <h2 class="text-4xl uppercase font-medium tracking-widest">{{ site.data.faqs.title }}</h2>
+      <div class="w-16 h-1 bg-primary my-4"></div>
+
+      <div class="mt-8" data-controller="accordion">
+        {% for question in site.data.faqs.questions %}
+          <div data-accordion-target="item" data-action="click->accordion#toggle" class="mb-4 flex flex-col rounded cursor-pointer">
+            <div class="relative py-3 pl-16 pr-4 mb-0 bg-gray-100 text-gray-800 border-none font-semibold w-full flex items-center justify-between border border-gray-200">
+              <span class="accordion__number absolute left-0 bottom-0 top-0 w-10 h-full bg-gray-200 text-gray-800 flex items-center justify-center shadow-lg">
+                0{{ forloop.index }}
+              </span>
+              <span class="flex-1 text-left">{{ question.question }}</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+            </div>
+            <div class="accordion__content transition-all max-h-0 overflow-hidden bg-white px-4">
+              <p class="py-4">{{ question.answer }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden lg:block lg:w-1/2 overflow-hidden relative">
+    <img src="/assets/images/backgrounds/faq-background.jpg" class="absolute h-full w-full object-cover object-top transition-all" alt="FAQ background" loading="lazy">
+  </div>
+</section>

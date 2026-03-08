@@ -1,0 +1,86 @@
+{% assign isHome = page.layout == 'home' %}
+
+<header class="{% if isHome %}header_main{% endif %}">
+  <!-- Top bar -->
+  <div class="hidden md:block bg-gray-800 text-white shadow">
+    <div class="container mx-auto py-1 flex justify-between items-center">
+      <div class="flex items-center justify-between text-sm">
+        <a class="px-2 hover:text-primary transition-colors" href="mailto:{{ site.data.site.contact.email }}" title="Email de support">
+          <i class="fa-solid fa-envelope text-primary"></i> {{ site.data.site.contact.email_display }}
+        </a>
+        <span class="px-2">
+          <i class="fa-solid fa-clock text-primary"></i> 24h/7j
+        </span>
+        <span class="px-2">
+          <i class="fa-solid fa-map-marker-alt text-primary"></i> {{ site.data.site.contact.address }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <div class="{% if isHome %}absolute text-white{% endif %} container mx-auto left-0 right-0 flex justify-between items-center mt-2 px-4 py-4 z-10">
+    <a href="/">
+      {% if isHome %}
+        <img src="{{ site.data.site.logo_light }}" alt="{{ site.data.site.name }}" class="h-16">
+      {% else %}
+        <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-16">
+      {% endif %}
+    </a>
+
+    <!-- Phone -->
+    <div class="hidden md:flex ml-8 justify-center items-center">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}" title="Numéro de téléphone de Boyacars" class="flex justify-between items-center border-l-4 border-white pl-8">
+        <i class="fa-solid fa-phone text-2xl text-primary mr-2 animate-bounce"></i>
+        <div class="ml-2 flex flex-col text-xs animate-pulse">
+          <span>Appelez-nous pour de l'aide</span>
+          <span class="font-semibold">{{ site.data.site.contact.phone }}</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="lg:hidden" data-controller="slidebar">
+      <button class="focus:outline-none js-toggle-mobile-slidebar" data-action="click->slidebar#toggle">
+        <i class="fa-solid fa-bars text-4xl {% if isHome %}text-white{% else %}text-gray-800{% endif %}"></i>
+      </button>
+    </div>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex relative flex-1 flex flex-wrap items-center content-between justify-end">
+      <ul class="flex flex-wrap list-none p-0 pl-0 mb-0">
+        {% for item in site.data.navigation.main %}
+          <li class="py-2 px-4 {% if page.url == item.url %}border-solid border-b-4 border-primary{% endif %}">
+            <a title="{{ item.title }}" href="{{ item.url }}" class="{% if isHome %}text-white{% else %}text-gray-800{% endif %} font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile slidebar -->
+<div class="mobile-slidebar fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300" data-slidebar-target="slidebar">
+  <div class="p-6">
+    <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-12 mb-8">
+    <nav>
+      <ul class="space-y-4">
+        {% for item in site.data.navigation.main %}
+          <li>
+            <a href="{{ item.url }}" class="text-gray-800 font-semibold uppercase tracking-wide hover:text-primary transition-colors">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="mt-8 pt-8 border-t border-gray-200">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}" class="flex items-center text-primary">
+        <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
+        <span class="font-semibold">{{ site.data.site.contact.phone }}</span>
+      </a>
+    </div>
+  </div>
+</div>

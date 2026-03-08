@@ -1,0 +1,129 @@
+/* Import external CSS first */
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import 'swiper/css';
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+  /* Separator */
+  .separator {
+    @apply w-16 h-1 bg-primary;
+  }
+
+  /* Preloader */
+  .preloader {
+    @apply fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500;
+  }
+
+  .preloader.hidden {
+    @apply opacity-0 pointer-events-none;
+  }
+
+  .spinner {
+    @apply w-12 h-12 border-4 border-gray-200 border-t-primary rounded-full;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Header on home page */
+  .header_main {
+    @apply absolute top-0 left-0 right-0 z-50;
+  }
+
+  /* Mobile slidebar */
+  .mobile-slidebar.show-mobile-slidebar {
+    @apply translate-x-0;
+  }
+
+  /* Accordion */
+  .accordion__content {
+    @apply max-h-0 overflow-hidden transition-all duration-300;
+  }
+
+  [data-accordion-target="item"].active .accordion__content {
+    @apply max-h-96;
+  }
+
+  [data-accordion-target="item"].active .fa-chevron-down {
+    @apply rotate-180;
+  }
+
+  /* Reviews quote */
+  .reviews__quote::before {
+    content: '';
+    @apply absolute left-10 -bottom-4 w-0 h-0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid rgb(229 231 235);
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.5s ease-in-out;
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.5s ease-in-out;
+  }
+
+  .animate-slide-in-down {
+    animation: slideInDown 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

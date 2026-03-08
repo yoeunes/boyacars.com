@@ -1,0 +1,18 @@
+title: "Témoignages"
+
+reviews:
+  - name: "Salma MOURAD"
+    picture: "/assets/images/reviewers/salma-mourad.jpg"
+    comment: "J'ai été très satisfait de la location de voiture avec BoyaCars. Le processus de réservation était simple et rapide, et la voiture était en excellent état. Le personnel était très sympathique et serviable. Je recommande fortement cette agence de location de voitures."
+
+  - name: "Younes KHOUBZA"
+    picture: "/assets/images/reviewers/younes-khoubza.jpg"
+    comment: "Je suis un client régulier de BoyaCars et je suis toujours satisfait de leur service. Les prix sont compétitifs et les voitures sont en bon état. Le personnel est amical et professionnel. Je recommande vivement cette agence de location de voitures."
+
+  - name: "Mohamed OTHMANI"
+    picture: "/assets/images/reviewers/mohamed-othmani.jpg"
+    comment: "J'ai loué une voiture chez BoyaCars pour un voyage en famille et j'ai été très satisfait de l'expérience. La voiture était propre et en excellent état, et le personnel était très serviable. Les prix étaient également très compétitifs. Je recommande BoyaCars à tous ceux qui cherchent une location de voiture fiable et abordable."
+
+  - name: "Khalid Dahman"
+    picture: "/assets/images/reviewers/khalid-dahman.jpg"
+    comment: "Je suis très satisfait de mon expérience avec BoyaCars. Le processus de réservation était simple et facile, et la voiture était en excellent état. Le personnel était également très sympathique et serviable. Je recommande cette agence de location de voitures à tous ceux qui cherchent un service de qualité à un prix raisonnable."

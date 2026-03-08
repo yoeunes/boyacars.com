@@ -1,0 +1,95 @@
+<footer class="bg-cover bg-left-bottom text-white relative py-16">
+  <img src="/assets/images/backgrounds/footer-background.jpg" class="absolute inset-0 h-full w-full object-cover brightness-50" alt="Footer background" loading="lazy">
+
+  <div class="px-4 py-24 container relative mx-auto flex flex-col">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-content-stretch">
+      <!-- About -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">{{ site.data.footer.title }}</h2>
+        <p>{{ site.data.footer.subtitle }}</p>
+        <p class="mt-2">{{ site.data.footer.description }}</p>
+        <div class="mt-4 space-y-2">
+          <div class="flex items-center">
+            <i class="fa-solid fa-map-marker-alt text-primary mr-2"></i>
+            <span>{{ site.data.site.contact.address }}</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fa-solid fa-envelope text-primary mr-2"></i>
+            <a href="mailto:{{ site.data.site.contact.email }}" class="text-white hover:underline">{{ site.data.site.contact.email_display }}</a>
+          </div>
+          <div class="flex items-center">
+            <i class="fa-solid fa-phone text-primary mr-2"></i>
+            <a href="tel:{{ site.data.site.contact.phone_raw }}" class="text-white hover:underline">{{ site.data.site.contact.phone }}</a>
+          </div>
+          <div class="flex items-center">
+            <i class="fa-solid fa-clock text-primary mr-2"></i>
+            <span>{{ site.data.footer.availability }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="ml-0 md:ml-20">
+        <h2 class="text-2xl font-bold mb-4">Navigation</h2>
+        <div class="w-16 h-1 bg-primary mb-4"></div>
+        <ul class="mt-4 space-y-2">
+          {% for item in site.data.navigation.main %}
+            <li>
+              <a class="text-white font-semibold hover:text-primary transition-colors duration-200 ease-in-out uppercase" href="{{ item.url }}">
+                {{ item.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Locations 1 -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Nos Villes</h2>
+        <div class="w-16 h-1 bg-primary mb-4"></div>
+        <ul class="mt-4 space-y-2">
+          {% assign half = site.data.cities.size | divided_by: 2 %}
+          {% for city in site.data.cities limit: 4 %}
+            <li>
+              <a class="text-white hover:text-primary transition-colors duration-200 ease-in-out" href="/parc/">
+                Location de voiture à {{ city }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Locations 2 -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Autres Villes</h2>
+        <div class="w-16 h-1 bg-primary mb-4"></div>
+        <ul class="mt-4 space-y-2">
+          {% for city in site.data.cities offset: 4 %}
+            <li>
+              <a class="text-white hover:text-primary transition-colors duration-200 ease-in-out" href="/parc/">
+                Location de voiture à {{ city }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social links -->
+    <div class="mt-10 flex justify-center space-x-4">
+      {% for social in site.data.site.social %}
+        <a href="{{ social.url }}"
+           class="rounded-full bg-primary hover:bg-primary-dark inline-flex w-10 h-10 items-center justify-center transition-colors duration-200 ease-in-out"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="{{ social.name }}">
+          <i class="{{ social.icon }}"></i>
+        </a>
+      {% endfor %}
+    </div>
+
+    <p class="text-center mt-10 text-sm">
+      {{ site.data.footer.copyright }}
+    </p>
+  </div>
+</footer>

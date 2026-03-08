@@ -1,0 +1,53 @@
+# Site settings
+title: Boyacars
+tagline: Location de Voitures à Marrakech
+description: Location de voiture économique à Marrakech
+url: "https://boyacars.com"
+baseurl: ""
+lang: fr
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections
+collections:
+  vehicles:
+    output: true
+    permalink: /voiture/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "vehicles"
+    values:
+      layout: "vehicle"
+
+# Include pages directory
+include:
+  - pages
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - package.json
+  - package-lock.json
+  - vite.config.js
+  - tailwind.config.js
+  - postcss.config.js
+  - bin
+  - frontend
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Keep files during build
+keep_files:
+  - assets/vite

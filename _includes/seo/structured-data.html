@@ -1,0 +1,62 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ site.data.site.name }}",
+  "description": "{{ site.data.site.description }}",
+  "url": "{{ site.data.site.url }}",
+  "logo": "{{ site.data.site.logo | absolute_url }}",
+  "image": "{{ site.data.site.logo | absolute_url }}",
+  "telephone": "{{ site.data.site.contact.phone }}",
+  "email": "{{ site.data.site.contact.email }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bd Allal Al Fassi",
+    "addressLocality": "Marrakech",
+    "postalCode": "40000",
+    "addressCountry": "MA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "31.673783",
+    "longitude": "-8.028108"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "$$",
+  "sameAs": [
+    {% for social in site.data.site.social %}"{{ social.url }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{% if page.layout == 'vehicle' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.title }}",
+  "description": "{{ page.seo.description | default: page.title }}",
+  "image": "{{ page.image | prepend: '/assets/images/cars/' | absolute_url }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ page.make }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "MAD",
+    "price": "{{ page.rates[0].price }}",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ site.data.site.name }}"
+    }
+  }
+}
+</script>
+{% endif %}

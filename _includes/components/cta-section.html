@@ -1,0 +1,23 @@
+<section class="bg-primary bg-cover bg-bottom relative animate-fade-in">
+  <img src="/assets/images/backgrounds/green-background.png" class="absolute inset-0 h-full w-full object-cover" alt="Background" loading="lazy">
+
+  <div class="container px-8 py-8 mx-auto text-white text-center relative z-10">
+    <h2 class="text-white text-3xl font-bold mb-2">Trouvez les meilleures offres de location de voitures à Marrakech</h2>
+    <p class="text-white container mx-auto lg:px-24 mb-10">
+      Bénéficiez des tarifs abordables pour la location de voitures chez Boyacars. Que ce soit pour une location à la journée, à la semaine ou pour une durée prolongée, réservez dès maintenant et économisez!
+    </p>
+
+    <div class="md:flex justify-between items-center lg:w-1/2 bg-white px-10 py-10 text-gray-800 relative -mb-16 shadow mx-auto rounded-lg z-10">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}" class="md:flex justify-between items-center">
+        <i class="fa-solid fa-phone text-2xl text-primary mr-2 animate-bounce"></i>
+        <div class="flex flex-col">
+          <span class="text-xs text-gray-700">Des questions ?</span>
+          <span class="font-semibold text-primary hover:text-primary transition-colors">{{ site.data.site.contact.phone }}</span>
+        </div>
+      </a>
+      <a class="inline-block px-4 py-2 mt-4 md:mt-0 bg-primary hover:bg-primary-dark text-white rounded-lg uppercase font-semibold tracking-widest transition-colors animate-pulse" href="https://wa.me/{{ site.data.site.contact.whatsapp }}">
+        Réservez dès maintenant
+      </a>
+    </div>
+  </div>
+</section>

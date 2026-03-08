@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Build assets first
+echo "Building assets..."
+npm run build
+
+# Kill any existing processes on exit
+trap "kill 0" SIGINT SIGTERM EXIT
+
+# Start Vite in watch mode (background)
+npm run dev &
+
+# Start Jekyll with livereload
+bundle exec jekyll serve --livereload --incremental
+
+# Wait for all background processes
+wait

@@ -1,0 +1,49 @@
+---
+layout: base
+---
+
+{% include components/page-header.html title=page.title breadcrumb="Parc auto" %}
+
+<div class="container mx-auto px-6 py-10">
+  <section class="grid lg:grid-cols-3 gap-10">
+    {% include components/vehicle-gallery.html %}
+    {% include components/vehicle-pricing.html %}
+  </section>
+
+  <section class="mt-16">
+    <h2 class="font-semibold text-2xl border-b-2 py-4 px-4">Spécifications du véhicule</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4">
+      {% for category in page.specifications %}
+        <div>
+          <h3 class="font-semibold text-lg mb-4 text-primary capitalize">{{ category[0] }}</h3>
+          <div class="space-y-2">
+            {% for spec in category[1] %}
+              <div class="flex justify-between items-center">
+                <span>
+                  <i class="fa-solid fa-circle text-primary text-xs mr-2"></i>
+                  {{ spec.name }}
+                </span>
+                <span class="font-semibold">
+                  {% if spec.value == true %}
+                    <i class="fa-solid fa-check text-primary"></i>
+                  {% elsif spec.value == false %}
+                    <i class="fa-solid fa-xmark text-red-500"></i>
+                  {% else %}
+                    {{ spec.value }}
+                  {% endif %}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if page.content != "" %}
+      <div class="bg-gray-100 mt-8 p-6 rounded overflow-hidden shadow-lg">
+        <h3 class="font-semibold text-xl mb-4">Description</h3>
+        {{ content }}
+      </div>
+    {% endif %}
+  </section>
+</div>

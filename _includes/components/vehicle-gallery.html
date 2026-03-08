@@ -1,0 +1,37 @@
+<div class="lg:col-span-2 rounded">
+  <div class="swiper relative" data-controller="swiper" data-swiper-slides-per-view-value="1">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/assets/images/cars/{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-contain">
+      </div>
+    </div>
+  </div>
+
+  <!-- Vehicle info badges -->
+  <div class="flex flex-wrap gap-4 mt-6">
+    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2">
+      <i class="fa-solid fa-calendar text-primary text-xl mr-2"></i>
+      <span class="font-semibold">{{ page.year }}</span>
+    </div>
+    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2">
+      <i class="fa-solid fa-gas-pump text-primary text-xl mr-2"></i>
+      <span class="font-semibold">{{ page.fuel }}</span>
+    </div>
+    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2">
+      <i class="fa-solid fa-gear text-primary text-xl mr-2"></i>
+      <span class="font-semibold">{{ page.transmission }}</span>
+    </div>
+    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2">
+      <i class="fa-solid fa-palette text-primary text-xl mr-2"></i>
+      <span class="font-semibold">{{ page.color }}</span>
+    </div>
+    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2">
+      <i class="fa-solid fa-users text-primary text-xl mr-2"></i>
+      <span class="font-semibold">{{ page.seats }} places</span>
+    </div>
+    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2">
+      <i class="fa-solid fa-door-open text-primary text-xl mr-2"></i>
+      <span class="font-semibold">{{ page.doors }} portes</span>
+    </div>
+  </div>
+</div>

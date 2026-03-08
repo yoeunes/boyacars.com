@@ -1,0 +1,23 @@
+<div class="main-slider relative h-[600px] md:h-[800px]" data-controller="swiper" data-swiper-autoplay-delay-value="5000" data-swiper-speed-value="200" data-swiper-parallax-value="true">
+  <div class="swiper-wrapper">
+    {% for slider in site.data.sliders %}
+      <div class="swiper-slide h-full">
+        <div class="parallax-bg absolute h-full w-full object-cover brightness-50" data-swiper-parallax="-23%">
+          <img src="{{ slider.image_url }}" alt="{{ slider.image_alt }}" class="absolute h-full w-full object-cover object-top animate-fade-in" loading="lazy">
+        </div>
+
+        <div class="container relative mx-auto flex flex-col items-center justify-center py-32 h-full" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
+          <h2 class="text-4xl md:text-6xl uppercase font-semibold tracking-widest text-white text-center animate-slide-in-down" data-swiper-parallax="-300" data-swiper-parallax-duration="800">
+            {{ slider.title }}
+          </h2>
+          <h3 class="mt-8 text-2xl md:text-3xl uppercase font-medium tracking-wide text-white text-center my-4 animate-slide-in-up" data-swiper-parallax="-500" data-swiper-parallax-duration="1000">
+            {{ slider.subtitle }}
+          </h3>
+          <a class="mt-8 px-4 py-2 bg-white text-primary hover:bg-primary hover:text-white transition-colors text-center rounded w-64 uppercase font-semibold tracking-widest mb-4 animate-bounce" data-swiper-parallax-y="-100" data-swiper-parallax-duration="1200" href="{{ slider.action_url }}">
+            {{ slider.action_text }}
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<section class="container mx-auto my-16 text-center animate-fade-in px-4">
+  <div class="text-center mb-8">
+    <h2 class="text-4xl uppercase font-bold text-gray-800 tracking-widest mb-2">{{ site.data.reviews.title }}</h2>
+    <div class="w-16 h-1 bg-primary mx-auto"></div>
+  </div>
+
+  <div class="reviews mt-16" data-controller="swiper" data-swiper-slides-per-view-value="2" data-swiper-space-between-value="20">
+    <div class="swiper-wrapper">
+      {% for review in site.data.reviews.reviews %}
+        <div class="swiper-slide w-full md:w-1/2 flex flex-col items-center justify-center text-center px-4 pb-8">
+          <p class="reviews__quote pt-10 pl-16 pr-8 pb-6 text-left relative bg-gray-200 font-medium rounded-lg shadow-md">
+            <i class="fa-solid fa-quote-left absolute left-0 top-0 ml-5 mt-5 text-2xl text-primary"></i>
+            {{ review.comment }}
+          </p>
+          <div class="flex items-center mt-4">
+            <img src="{{ review.picture }}" class="w-10 h-10 ml-10 rounded-full" alt="Photo de profile de {{ review.name }}" loading="lazy">
+            <div class="ml-4">
+              <p class="font-semibold">{{ review.name }}</p>
+              <ul class="flex items-center">
+                <li><i class="fa-solid fa-star text-primary"></i></li>
+                <li><i class="fa-solid fa-star text-primary"></i></li>
+                <li><i class="fa-solid fa-star text-primary"></i></li>
+                <li><i class="fa-solid fa-star text-primary"></i></li>
+                <li><i class="fa-solid fa-star text-primary"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

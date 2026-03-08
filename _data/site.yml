@@ -1,0 +1,37 @@
+name: "Boyacars"
+tagline: "Location de Voitures à Marrakech"
+description: "Location de voiture économique à Marrakech"
+url: "https://boyacars.com"
+logo: "/assets/images/logos/logo-dark.png"
+logo_light: "/assets/images/logos/logo-light.png"
+
+contact:
+  email: "support@boyacars.com"
+  email_display: "support@boyacars.com"
+  phone: "(+212) 662-825804"
+  phone_raw: "+212662825804"
+  whatsapp: "+212662825804"
+  address: "Bd Allal Al Fassi, Marrakech 40000, Marrakech, Maroc"
+
+social:
+  - name: twitter
+    url: "https://twitter.com/boyacars"
+    icon: "fa-brands fa-twitter"
+  - name: facebook
+    url: "https://facebook.com/boyacars"
+    icon: "fa-brands fa-facebook"
+  - name: linkedin
+    url: "https://www.linkedin.com/company/boyacars"
+    icon: "fa-brands fa-linkedin"
+  - name: instagram
+    url: "https://www.instagram.com/boyacarscom"
+    icon: "fa-brands fa-instagram"
+  - name: pinterest
+    url: "https://www.pinterest.com/boyacars"
+    icon: "fa-brands fa-pinterest"
+  - name: youtube
+    url: "https://www.youtube.com/channel/UChbSOKy-p3pvHqoNYRX1tXw"
+    icon: "fa-brands fa-youtube"
+
+colors:
+  primary: "#10B981"
