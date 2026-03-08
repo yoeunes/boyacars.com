@@ -5,4 +5,4 @@ echo "Building assets..."
 npm run build
 
 # Serve Jekyll
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload

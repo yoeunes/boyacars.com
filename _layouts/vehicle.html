@@ -2,32 +2,205 @@
 layout: base
 ---
 
-{% include components/page-header.html title=page.title breadcrumb="Parc auto" %}
+<!-- Vehicle Hero Section -->
+<section class="relative bg-gray-900 pt-8 pb-16">
+  <div class="absolute inset-0 bg-gradient-to-b from-gray-900/95 to-gray-900"></div>
 
-<div class="container mx-auto px-6 py-10">
-  <section class="grid lg:grid-cols-3 gap-10">
-    {% include components/vehicle-gallery.html %}
-    {% include components/vehicle-pricing.html %}
-  </section>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="mb-6" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li>
+          <a href="/" class="text-gray-400 hover:text-white transition-colors">Accueil</a>
+        </li>
+        <li class="text-gray-600">/</li>
+        <li>
+          <a href="/parc/" class="text-gray-400 hover:text-white transition-colors">Parc auto</a>
+        </li>
+        <li class="text-gray-600">/</li>
+        <li class="text-primary font-medium">{{ page.title }}</li>
+      </ol>
+    </nav>
 
-  <section class="mt-16">
-    <h2 class="font-semibold text-2xl border-b-2 py-4 px-4">Spécifications du véhicule</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Vehicle Image -->
+      <div class="relative">
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10">
+          <img
+            src="/assets/images/cars/{{ page.image }}"
+            alt="{{ page.title }}"
+            class="w-full h-auto object-contain max-h-[400px]"
+            loading="eager">
+        </div>
+
+        <!-- Quick Specs Badges -->
+        <div class="flex flex-wrap gap-3 mt-6 justify-center lg:justify-start">
+          <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white rounded-full px-4 py-2 text-sm border border-white/20">
+            <i class="fa-solid fa-calendar text-primary mr-2"></i>{{ page.year }}
+          </span>
+          <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white rounded-full px-4 py-2 text-sm border border-white/20">
+            <i class="fa-solid fa-gas-pump text-primary mr-2"></i>{{ page.fuel }}
+          </span>
+          <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white rounded-full px-4 py-2 text-sm border border-white/20">
+            <i class="fa-solid fa-gear text-primary mr-2"></i>{{ page.transmission }}
+          </span>
+          <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white rounded-full px-4 py-2 text-sm border border-white/20">
+            <i class="fa-solid fa-user text-primary mr-2"></i>{{ page.seats }} places
+          </span>
+        </div>
+      </div>
+
+      <!-- Vehicle Info & Booking -->
+      <div>
+        <!-- Category Badge -->
+        {% if page.categories.size > 0 %}
+          <span class="inline-flex items-center bg-primary/20 text-primary rounded-full px-4 py-1.5 text-sm font-medium mb-4">
+            {{ page.categories | first }}
+          </span>
+        {% endif %}
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          {{ page.title }}
+        </h1>
+
+        <!-- Color & Details -->
+        <p class="text-gray-400 text-lg mb-8">
+          {{ page.color }} • {{ page.transmission_detail | default: page.transmission }} • {{ page.doors }} portes
+        </p>
+
+        <!-- Pricing Card -->
+        <div class="bg-white rounded-2xl shadow-premium p-6 mb-6">
+          <div class="flex items-baseline justify-between mb-6">
+            <div>
+              <span class="text-gray-500 text-sm">À partir de</span>
+              <div class="flex items-baseline">
+                <span class="text-4xl font-bold text-gray-900">{{ page.rates | last | map: 'price' | first }}</span>
+                <span class="text-gray-500 ml-2">DH/jour</span>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center text-primary text-sm font-medium">
+                <i class="fa-solid fa-tag mr-1"></i>
+                Tarif dégressif
+              </span>
+            </div>
+          </div>
+
+          <!-- Rate Tiers -->
+          <div class="space-y-3 mb-6">
+            {% for rate in page.rates %}
+              <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center">
+                  <i class="fa-solid fa-calendar-day text-primary mr-3"></i>
+                  <span class="text-gray-700 font-medium">
+                    {% if rate.duration == 1 %}
+                      1 jour
+                    {% else %}
+                      {{ rate.duration }} jours ou plus
+                    {% endif %}
+                  </span>
+                </div>
+                <span class="font-bold text-gray-900">{{ rate.price }} DH<span class="text-gray-500 font-normal">/jour</span></span>
+              </div>
+            {% endfor %}
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}?text=Bonjour, je suis intéressé(e) par la {{ page.title }} ({{ page.color }}, {{ page.fuel }})."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="flex items-center justify-center w-full bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-4 px-6 rounded-xl text-lg transition-all duration-300 hover:shadow-lg">
+            <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
+            Réserver sur WhatsApp
+          </a>
+
+          <!-- Phone -->
+          <a href="tel:{{ site.data.site.contact.phone_raw }}"
+             class="flex items-center justify-center w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-xl mt-3 transition-colors">
+            <i class="fa-solid fa-phone mr-2"></i>
+            {{ site.data.site.contact.phone }}
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-shield-check text-primary text-xl mr-3"></i>
+            <span class="text-sm">Assurance incluse</span>
+          </div>
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-truck-fast text-primary text-xl mr-3"></i>
+            <span class="text-sm">Livraison gratuite</span>
+          </div>
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-baby-carriage text-primary text-xl mr-3"></i>
+            <span class="text-sm">Siège bébé gratuit</span>
+          </div>
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-headset text-primary text-xl mr-3"></i>
+            <span class="text-sm">Support 24h/7j</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specifications Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+        Spécifications du véhicule
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Découvrez les caractéristiques détaillées de la {{ page.title }}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {% for category in page.specifications %}
-        <div>
-          <h3 class="font-semibold text-lg mb-4 text-primary capitalize">{{ category[0] }}</h3>
-          <div class="space-y-2">
-            {% for spec in category[1] %}
-              <div class="flex justify-between items-center">
-                <span>
-                  <i class="fa-solid fa-circle text-primary text-xs mr-2"></i>
-                  {{ spec.name }}
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center capitalize">
+            {% case category[0] %}
+              {% when 'caracteristiques' %}
+                <span class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fa-solid fa-car text-primary"></i>
                 </span>
-                <span class="font-semibold">
+              {% when 'confort' %}
+                <span class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fa-solid fa-couch text-blue-600"></i>
+                </span>
+              {% when 'securite' %}
+                <span class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fa-solid fa-shield-halved text-red-600"></i>
+                </span>
+              {% when 'consommation' %}
+                <span class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fa-solid fa-leaf text-green-600"></i>
+                </span>
+              {% else %}
+                <span class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fa-solid fa-list text-gray-600"></i>
+                </span>
+            {% endcase %}
+            {{ category[0] | replace: 'caracteristiques', 'Caractéristiques' | replace: 'securite', 'Sécurité' }}
+          </h3>
+
+          <div class="space-y-4">
+            {% for spec in category[1] %}
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600 text-sm">{{ spec.name }}</span>
+                <span class="font-semibold text-gray-900 text-sm">
                   {% if spec.value == true %}
-                    <i class="fa-solid fa-check text-primary"></i>
+                    <span class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                      <i class="fa-solid fa-check text-primary text-xs"></i>
+                    </span>
                   {% elsif spec.value == false %}
-                    <i class="fa-solid fa-xmark text-red-500"></i>
+                    <span class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                      <i class="fa-solid fa-xmark text-red-500 text-xs"></i>
+                    </span>
                   {% else %}
                     {{ spec.value }}
                   {% endif %}
@@ -40,10 +213,41 @@ layout: base
     </div>
 
     {% if page.content != "" %}
-      <div class="bg-gray-100 mt-8 p-6 rounded overflow-hidden shadow-lg">
-        <h3 class="font-semibold text-xl mb-4">Description</h3>
-        {{ content }}
+      <div class="mt-12 bg-primary/5 rounded-2xl p-8 border border-primary/10">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+          <i class="fa-solid fa-info-circle text-primary mr-3"></i>
+          Inclus avec cette location
+        </h3>
+        <div class="prose prose-gray max-w-none text-gray-600">
+          {{ content }}
+        </div>
       </div>
     {% endif %}
-  </section>
-</div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">
+      Intéressé par cette {{ page.title }} ?
+    </h2>
+    <p class="text-gray-600 mb-8">
+      Contactez-nous maintenant pour réserver ou obtenir plus d'informations. Réponse garantie en quelques minutes.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}?text=Bonjour, je suis intéressé(e) par la {{ page.title }}."
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:shadow-lg">
+        <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
+        Réserver maintenant
+      </a>
+      <a href="/parc/"
+         class="inline-flex items-center bg-white hover:bg-gray-100 text-gray-800 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 border border-gray-200">
+        <i class="fa-solid fa-car mr-3"></i>
+        Voir autres véhicules
+      </a>
+    </div>
+  </div>
+</section>
