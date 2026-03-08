@@ -52,7 +52,7 @@
     <div class="flex items-center text-sm text-gray-500 mb-3">
       <i class="fa-solid fa-calendar mr-2 text-primary/60"></i>
       <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-        {{ post.date | date: "%d %B %Y" }}
+        {% include date_fr.html date=post.date %}
       </time>
     </div>
 
