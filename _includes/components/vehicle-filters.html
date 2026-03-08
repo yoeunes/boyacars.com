@@ -1,15 +1,19 @@
 <!-- Vehicle Filters -->
-<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
-  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-    <div class="flex flex-col sm:flex-row gap-4 flex-1">
+<div class="bg-white rounded-2xl shadow-lg p-6 mb-10 border border-gray-100">
+  <div class="flex flex-col lg:flex-row lg:items-center gap-6">
+    <!-- Filters -->
+    <div class="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
       <!-- Fuel Filter -->
-      <div class="flex-1">
-        <label for="fuel-filter" class="block text-sm font-medium text-gray-700 mb-1">Carburant</label>
+      <div>
+        <label for="fuel-filter" class="block text-sm font-semibold text-gray-700 mb-2">
+          <i class="fa-solid fa-gas-pump text-primary mr-1.5"></i>
+          Carburant
+        </label>
         <select
           id="fuel-filter"
           data-vehicle-filter-target="fuelFilter"
           data-action="change->vehicle-filter#filter"
-          class="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary py-2 px-3">
+          class="w-full rounded-xl border-gray-200 bg-gray-50 shadow-sm focus:border-primary focus:ring-primary py-3 px-4 text-gray-700 font-medium">
           <option value="">Tous</option>
           <option value="diesel">Diesel</option>
           <option value="essence">Essence</option>
@@ -17,13 +21,16 @@
       </div>
 
       <!-- Transmission Filter -->
-      <div class="flex-1">
-        <label for="transmission-filter" class="block text-sm font-medium text-gray-700 mb-1">Transmission</label>
+      <div>
+        <label for="transmission-filter" class="block text-sm font-semibold text-gray-700 mb-2">
+          <i class="fa-solid fa-gear text-primary mr-1.5"></i>
+          Transmission
+        </label>
         <select
           id="transmission-filter"
           data-vehicle-filter-target="transmissionFilter"
           data-action="change->vehicle-filter#filter"
-          class="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary py-2 px-3">
+          class="w-full rounded-xl border-gray-200 bg-gray-50 shadow-sm focus:border-primary focus:ring-primary py-3 px-4 text-gray-700 font-medium">
           <option value="">Toutes</option>
           <option value="automatique">Automatique</option>
           <option value="manuelle">Manuelle</option>
@@ -31,13 +38,16 @@
       </div>
 
       <!-- Price Filter -->
-      <div class="flex-1">
-        <label for="price-filter" class="block text-sm font-medium text-gray-700 mb-1">Prix max/jour</label>
+      <div>
+        <label for="price-filter" class="block text-sm font-semibold text-gray-700 mb-2">
+          <i class="fa-solid fa-tag text-primary mr-1.5"></i>
+          Prix max/jour
+        </label>
         <select
           id="price-filter"
           data-vehicle-filter-target="priceFilter"
           data-action="change->vehicle-filter#filter"
-          class="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary py-2 px-3">
+          class="w-full rounded-xl border-gray-200 bg-gray-50 shadow-sm focus:border-primary focus:ring-primary py-3 px-4 text-gray-700 font-medium">
           <option value="">Tous les prix</option>
           <option value="300">Jusqu'à 300 DH</option>
           <option value="500">Jusqu'à 500 DH</option>
@@ -47,17 +57,21 @@
       </div>
     </div>
 
-    <!-- Reset & Count -->
-    <div class="flex items-end gap-4">
+    <!-- Divider (Desktop) -->
+    <div class="hidden lg:block w-px h-16 bg-gray-200"></div>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-between lg:justify-start gap-4">
       <button
         type="button"
         data-action="click->vehicle-filter#reset"
-        class="px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">
-        <i class="fa-solid fa-rotate-right mr-1"></i>
+        class="inline-flex items-center px-4 py-2.5 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-xl transition-all font-medium">
+        <i class="fa-solid fa-rotate-right mr-2"></i>
         Réinitialiser
       </button>
-      <div class="bg-primary/10 text-primary font-semibold px-4 py-2 rounded-lg">
-        <span data-vehicle-filter-target="count">0 véhicules trouvés</span>
+      <div class="bg-primary/10 text-primary font-bold px-5 py-2.5 rounded-xl whitespace-nowrap">
+        <i class="fa-solid fa-car mr-2"></i>
+        <span data-vehicle-filter-target="count">0 véhicules</span>
       </div>
     </div>
   </div>

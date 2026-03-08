@@ -1,61 +1,93 @@
 {% assign price = include.vehicle.rates[0].price | default: 0 %}
+{% assign lowest_price = include.vehicle.rates | last | map: 'price' | first %}
 
 <article
-  class="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-premium-lg hover:border-gold group"
+  class="group relative bg-white rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
   data-vehicle-filter-target="vehicle"
   data-fuel="{{ include.vehicle.fuel | downcase }}"
   data-transmission="{{ include.vehicle.transmission | downcase }}"
   data-price="{{ price }}">
 
+  <!-- Card Inner with Border -->
+  <div class="absolute inset-0 rounded-3xl border border-gray-200 group-hover:border-primary/30 transition-colors duration-300 pointer-events-none z-10"></div>
+
   <a href="{{ include.vehicle.url }}" class="block">
-    <div class="relative overflow-hidden aspect-[16/10]">
-      {% if include.vehicle.image %}
-        <img
-          class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
-          src="/assets/images/cars/{{ include.vehicle.image }}"
-          alt="{{ include.vehicle.title }}"
-          loading="lazy">
-      {% else %}
-        <div class="flex items-center justify-center h-full bg-gray-100 text-6xl text-gray-400">
-          <i class="fa-solid fa-car"></i>
+    <!-- Image Section -->
+    <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 pt-6 px-6 pb-4">
+      <!-- Category Badge -->
+      {% if include.vehicle.categories.size > 0 %}
+        <span class="absolute top-4 left-4 bg-gray-900/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full z-10">
+          {{ include.vehicle.categories | first }}
+        </span>
+      {% endif %}
+
+      <!-- Price Badge -->
+      {% if include.vehicle.rates.size > 0 %}
+        <div class="absolute top-4 right-4 z-10">
+          <div class="bg-white rounded-2xl shadow-lg px-4 py-2 text-center">
+            <span class="text-xs text-gray-500 block">à partir de</span>
+            <span class="text-xl font-bold text-gray-900">{{ lowest_price }}</span>
+            <span class="text-xs text-gray-500">DH/j</span>
+          </div>
         </div>
       {% endif %}
 
-      {% if include.vehicle.rates.size > 0 %}
-        <div class="absolute top-4 right-4 bg-white text-gray-900 py-2.5 px-5 rounded-full font-bold text-lg shadow-lg">
-          {{ price }} DH<span class="text-xs font-normal text-gray-600">/jour</span>
-        </div>
-      {% endif %}
+      <!-- Car Image -->
+      <div class="relative h-44 flex items-center justify-center">
+        {% if include.vehicle.image %}
+          <img
+            class="max-h-full w-auto object-contain drop-shadow-lg transform group-hover:scale-105 transition-transform duration-500"
+            src="/assets/images/cars/{{ include.vehicle.image }}"
+            alt="{{ include.vehicle.title }}"
+            loading="lazy">
+        {% else %}
+          <div class="flex items-center justify-center h-full text-6xl text-gray-300">
+            <i class="fa-solid fa-car"></i>
+          </div>
+        {% endif %}
+      </div>
     </div>
 
-    <div class="p-6">
-      <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors font-display mb-3">
-        {{ include.vehicle.title }}
-      </h2>
+    <!-- Content Section -->
+    <div class="p-6 pt-5">
+      <!-- Title & Year -->
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors font-display leading-tight">
+            {{ include.vehicle.title }}
+          </h2>
+          {% if include.vehicle.year %}
+            <span class="text-sm text-gray-500">{{ include.vehicle.year }} • {{ include.vehicle.color }}</span>
+          {% endif %}
+        </div>
+      </div>
 
-      <div class="flex flex-wrap gap-2 mb-5">
-        <span class="inline-flex items-center bg-gray-100 rounded-full px-3 py-1.5 text-xs font-medium text-gray-700">
-          <i class="fa-solid fa-gas-pump text-primary mr-2"></i> {{ include.vehicle.fuel }}
-        </span>
-        <span class="inline-flex items-center bg-gray-100 rounded-full px-3 py-1.5 text-xs font-medium text-gray-700">
-          <i class="fa-solid fa-gear text-primary mr-2"></i> {{ include.vehicle.transmission }}
-        </span>
-        {% if include.vehicle.seats %}
-          <span class="inline-flex items-center bg-gray-100 rounded-full px-3 py-1.5 text-xs font-medium text-gray-700">
-            <i class="fa-solid fa-user text-primary mr-2"></i> {{ include.vehicle.seats }} places
-          </span>
-        {% endif %}
+      <!-- Specs Grid -->
+      <div class="grid grid-cols-3 gap-3 mb-5">
+        <div class="text-center p-2.5 bg-gray-50 rounded-xl">
+          <i class="fa-solid fa-gas-pump text-primary text-sm mb-1 block"></i>
+          <span class="text-xs font-medium text-gray-700">{{ include.vehicle.fuel }}</span>
+        </div>
+        <div class="text-center p-2.5 bg-gray-50 rounded-xl">
+          <i class="fa-solid fa-gear text-primary text-sm mb-1 block"></i>
+          <span class="text-xs font-medium text-gray-700">{{ include.vehicle.transmission }}</span>
+        </div>
+        <div class="text-center p-2.5 bg-gray-50 rounded-xl">
+          <i class="fa-solid fa-users text-primary text-sm mb-1 block"></i>
+          <span class="text-xs font-medium text-gray-700">{{ include.vehicle.seats }} places</span>
+        </div>
       </div>
     </div>
   </a>
 
+  <!-- CTA Button -->
   <div class="px-6 pb-6">
-    <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}?text=Bonjour, je suis intéressé(e) par la {{ include.vehicle.title }} à {{ price }} DH/jour."
+    <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}?text=Bonjour, je suis intéressé(e) par la {{ include.vehicle.title }} à {{ lowest_price }} DH/jour."
        target="_blank"
        rel="noopener noreferrer"
-       class="flex items-center justify-center w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 px-4 rounded-xl transition-all duration-300 hover:shadow-lg">
-      <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
-      Réserver sur WhatsApp
+       class="flex items-center justify-center w-full bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-3.5 px-4 rounded-xl transition-all duration-300 hover:shadow-lg group/btn">
+      <i class="fa-brands fa-whatsapp text-xl mr-2 group-hover/btn:scale-110 transition-transform"></i>
+      Réserver
     </a>
   </div>
 </article>
