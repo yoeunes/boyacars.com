@@ -5,59 +5,101 @@ permalink: /contact/
 description: Contactez Boyacars pour toute question concernant la location de voiture à Marrakech. Nous sommes disponibles 24h/7j.
 ---
 
-{% include components/page-header.html title="Contactez-nous" %}
+<section class="py-20 bg-white animate-fade-in">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+        Contactez-nous
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Notre équipe est disponible 24h/7j pour répondre à toutes vos questions et vous aider dans votre location.
+      </p>
+    </div>
 
-<div class="container mx-auto mt-16 mb-16 px-4">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold text-gray-800 mb-4">Comment nous joindre ?</h2>
-    <p class="text-gray-600 text-lg">Disponible 24h/7j pour répondre à vos questions</p>
-  </div>
+    <!-- WhatsApp Hero -->
+    <div class="max-w-3xl mx-auto mb-16">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="group block bg-[#25D366] rounded-3xl p-10 text-center hover:shadow-premium-lg transition-all duration-300 transform hover:scale-[1.02]">
+        <div class="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+          <i class="fa-brands fa-whatsapp text-6xl text-white"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-white mb-3">
+          Écrivez-nous sur WhatsApp
+        </h2>
+        <p class="text-white/90 text-lg mb-6">
+          Réponse rapide garantie - Disponible 24h/7j
+        </p>
+        <div class="inline-flex items-center bg-white text-[#25D366] font-bold py-3 px-8 rounded-full text-lg group-hover:bg-gray-100 transition-colors">
+          <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
+          Démarrer une conversation
+        </div>
+      </a>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-    <!-- Téléphone -->
-    <a href="tel:{{ site.data.site.contact.phone_raw }}"
-       class="group bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary">
-      <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-        <i class="fa-solid fa-phone text-3xl text-primary group-hover:text-white transition-colors duration-300"></i>
+    <!-- Other Contact Methods -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+      <!-- Téléphone -->
+      <a href="tel:{{ site.data.site.contact.phone_raw }}"
+         class="group bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gold hover:shadow-premium transition-all duration-300">
+        <div class="flex items-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-300 flex-shrink-0">
+            <i class="fa-solid fa-phone text-2xl text-primary group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <div class="ml-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Téléphone</h3>
+            <p class="text-primary font-semibold text-lg">{{ site.data.site.contact.phone }}</p>
+            <p class="text-gray-500 text-sm mt-1">Appelez-nous directement</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:{{ site.data.site.contact.email }}"
+         class="group bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gold hover:shadow-premium transition-all duration-300">
+        <div class="flex items-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-300 flex-shrink-0">
+            <i class="fa-solid fa-envelope text-2xl text-primary group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <div class="ml-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
+            <p class="text-primary font-semibold">{{ site.data.site.contact.email_display }}</p>
+            <p class="text-gray-500 text-sm mt-1">Pour vos demandes détaillées</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Availability Badge -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center bg-gray-100 rounded-full px-8 py-4">
+        <i class="fa-solid fa-clock text-primary text-xl mr-3"></i>
+        <span class="text-gray-700 font-semibold text-lg">Disponible 24h/7j</span>
       </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-3">Téléphone</h3>
-      <p class="text-primary font-semibold text-lg">{{ site.data.site.contact.phone }}</p>
-      <p class="text-gray-500 text-sm mt-2">Appelez-nous directement</p>
-    </a>
+    </div>
 
-    <!-- WhatsApp - Mise en avant -->
-    <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="group bg-[#25D366] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-      <div class="w-20 h-20 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
-        <i class="fa-brands fa-whatsapp text-4xl text-white"></i>
+    <!-- Map Section -->
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">
+          Notre Localisation
+        </h2>
+        <p class="text-gray-600">
+          {{ site.data.site.contact.address }}
+        </p>
       </div>
-      <h3 class="text-xl font-bold text-white mb-3">WhatsApp</h3>
-      <p class="text-white font-semibold text-lg">Écrivez-nous</p>
-      <p class="text-white/80 text-sm mt-2">Réponse rapide garantie</p>
-      <div class="mt-4 inline-block bg-white text-[#25D366] font-bold py-2 px-6 rounded-full text-sm">
-        Démarrer une conversation
+      
+      <div class="rounded-2xl overflow-hidden shadow-premium border border-gray-200">
+        <iframe
+          class="w-full h-96"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.5406899240347!2d-8.028108706379927!3d31.673783672886536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafedb18389b929%3A0x3fbe8d311a8c07f4!2sBoya%20luxury%20cars!5e0!3m2!1sfr!2sma!4v1683407939369!5m2!1sfr!2sma"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
-    </a>
-
-    <!-- Email -->
-    <a href="mailto:{{ site.data.site.contact.email }}"
-       class="group bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary">
-      <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-        <i class="fa-solid fa-envelope text-3xl text-primary group-hover:text-white transition-colors duration-300"></i>
-      </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-3">Email</h3>
-      <p class="text-primary font-semibold text-lg">{{ site.data.site.contact.email_display }}</p>
-      <p class="text-gray-500 text-sm mt-2">Pour vos demandes détaillées</p>
-    </a>
-  </div>
-
-  <!-- Message d'accroche -->
-  <div class="text-center mt-16">
-    <div class="inline-flex items-center bg-gray-100 rounded-full px-6 py-3">
-      <i class="fa-solid fa-clock text-primary mr-3"></i>
-      <span class="text-gray-700 font-medium">Notre équipe est disponible 24h/7j pour vous accompagner</span>
     </div>
   </div>
-</div>
+</section>
