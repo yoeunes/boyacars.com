@@ -2,26 +2,26 @@ title: "Pourquoi Choisir Boyacars ?"
 subtitle: "L'excellence à Marrakech depuis 2014"
 
 options:
-  - icon: "fa-solid fa-shield-halved"
+  - icon: "fa-duotone fa-shield-check"
     title: "Assurance Tout Risque"
     description: "Voyagez l'esprit tranquille avec notre assurance complète incluse"
 
-  - icon: "fa-solid fa-plane-arrival"
+  - icon: "fa-duotone fa-plane-arrival"
     title: "Livraison Aéroport"
     description: "Nous vous accueillons directement à l'aéroport de Marrakech"
 
-  - icon: "fa-solid fa-car"
+  - icon: "fa-duotone fa-car"
     title: "Véhicules Récents"
     description: "Une flotte de véhicules modernes et bien entretenus"
 
-  - icon: "fa-solid fa-baby-carriage"
+  - icon: "fa-duotone fa-baby-carriage"
     title: "Siège Bébé Gratuit"
     description: "Équipements bébé fournis sans frais supplémentaires"
 
-  - icon: "fa-solid fa-headset"
+  - icon: "fa-duotone fa-headset"
     title: "Support 24/7"
     description: "Une équipe disponible à tout moment pour vous assister"
 
-  - icon: "fa-solid fa-road"
+  - icon: "fa-duotone fa-road"
     title: "Kilométrage Illimité"
     description: "Explorez le Maroc sans limite de distance"

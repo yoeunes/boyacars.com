@@ -1,15 +1,15 @@
 ---
 title: "Peugeot 208"
-slug: "location-de-voiture-peugeot-208-manuelle-diesel-rouge-1"
+slug: "location-de-voiture-peugeot-208-automatique-diesel-gris"
 make: "Peugeot"
 model: "208"
 published: true
 
 fuel: "Diesel"
-transmission: "Manuelle"
-transmission_detail: "5 rapports"
-color: "Rouge"
-year: 2019
+transmission: "Automatique"
+transmission_detail: "6 rapports"
+color: "Gris"
+year: 2021
 seats: 5
 doors: 5
 

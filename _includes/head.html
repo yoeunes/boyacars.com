@@ -13,18 +13,20 @@
 <meta name="description" content="{% if page.seo.description %}{{ page.seo.description }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.data.site.description }}{% endif %}">
 
 <!-- Open Graph -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.seo.title %}{{ page.seo.title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.data.site.name }}{% endif %}">
 <meta property="og:description" content="{% if page.seo.description %}{{ page.seo.description }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.data.site.description }}{% endif %}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-<meta property="og:image" content="{{ site.data.site.logo_light | absolute_url }}">
+<meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.data.site.logo_light | absolute_url }}{% endif %}">
+<meta property="og:site_name" content="{{ site.data.site.name }}">
+<meta property="og:locale" content="fr_FR">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@boyacars">
 <meta name="twitter:title" content="{% if page.seo.title %}{{ page.seo.title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.data.site.name }}{% endif %}">
 <meta name="twitter:description" content="{% if page.seo.description %}{{ page.seo.description }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.data.site.description }}{% endif %}">
-<meta name="twitter:image" content="{{ site.data.site.logo_light | absolute_url }}">
+<meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.data.site.logo_light | absolute_url }}{% endif %}">
 
 <!-- Favicon -->
 <link rel="icon" href="/assets/images/favicons/favicon.ico">

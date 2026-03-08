@@ -1,15 +1,15 @@
 ---
 title: "Peugeot 208"
-slug: "location-de-voiture-peugeot-208-manuelle-diesel-rouge"
+slug: "location-de-voiture-peugeot-208-manuelle-essence-blanc"
 make: "Peugeot"
 model: "208"
 published: true
 
-fuel: "Diesel"
+fuel: "Essence"
 transmission: "Manuelle"
 transmission_detail: "5 rapports"
-color: "Rouge"
-year: 2019
+color: "Blanc"
+year: 2020
 seats: 5
 doors: 5
 

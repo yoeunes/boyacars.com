@@ -4,7 +4,7 @@ reviews:
   - name: "Mohamed OTHMANI"
     location: "Casablanca, Maroc"
     vehicle: "Peugeot 208"
-    date: "Mars 2024"
+    date: "Février 2026"
     rating: 5
     picture: "/assets/images/reviewers/mohamed-othmani.jpg"
     comment: "Excellent service ! J'ai loué une Peugeot 208 pour le week-end. La voiture était propre, récente et en parfait état. Livraison à l'aéroport sans aucun souci. Je recommande vivement Boyacars."
@@ -12,7 +12,7 @@ reviews:
   - name: "Salma MOURAD"
     location: "Paris, France"
     vehicle: "Dacia Duster"
-    date: "Février 2024"
+    date: "Janvier 2026"
     rating: 5
     picture: "/assets/images/reviewers/salma-mourad.jpg"
     comment: "Très satisfaite de ma location pour explorer la région de Marrakech. Le Duster était parfait pour les routes de montagne. Prix transparent, pas de mauvaise surprise. Merci !"
@@ -20,7 +20,7 @@ reviews:
   - name: "Khalid DAHMAN"
     location: "Rabat, Maroc"
     vehicle: "Range Rover Evoque"
-    date: "Janvier 2024"
+    date: "Décembre 2025"
     rating: 5
     picture: "/assets/images/reviewers/khalid-dahman.jpg"
     comment: "Service premium pour un véhicule premium. L'Evoque était comme neuve. L'équipe est très professionnelle et disponible 24/7 comme promis. Mon choix pour mes déplacements professionnels."
@@ -28,7 +28,7 @@ reviews:
   - name: "Younes ENNAJI"
     location: "Marrakech, Maroc"
     vehicle: "Citroën C3"
-    date: "Décembre 2023"
+    date: "Novembre 2025"
     rating: 5
     picture: "/assets/images/reviewers/younes-khoubza.jpg"
     comment: "Location mensuelle pour mon travail. Très bon rapport qualité-prix. Le kilométrage illimité m'a permis de bouger librement. Service client réactif et à l'écoute."

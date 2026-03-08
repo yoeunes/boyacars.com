@@ -57,7 +57,7 @@ layout: default
           <span class="flex items-center">
             <i class="fa-solid fa-calendar mr-2 text-primary"></i>
             <time datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">
-              {{ page.date | date: "%d %B %Y" }}
+              {% include date_fr.html date=page.date %}
             </time>
           </span>
           <span class="flex items-center">
