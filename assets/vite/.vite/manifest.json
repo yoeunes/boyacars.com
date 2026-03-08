@@ -32,12 +32,12 @@
     "src": "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "entrypoints/application.js": {
-    "file": "main-YinsN3ku.js",
+    "file": "main-BvNxbAiJ.js",
     "name": "main",
     "src": "entrypoints/application.js",
     "isEntry": true,
     "css": [
-      "main-BFEhRfwd.css"
+      "main-C6VJzmJW.css"
     ],
     "assets": [
       "fa-brands-400-D_cYUPeE.woff2",
