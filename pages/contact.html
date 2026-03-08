@@ -5,50 +5,64 @@ permalink: /contact/
 description: Contactez Boyacars pour toute question concernant la location de voiture à Marrakech. Nous sommes disponibles 24h/7j.
 ---
 
-<section class="py-20 bg-white animate-fade-in">
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-        Contactez-nous
-      </h1>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Notre équipe est disponible 24h/7j pour répondre à toutes vos questions et vous aider dans votre location.
-      </p>
-    </div>
+<!-- Hero Section -->
+<section class="relative bg-gray-900 py-20">
+  <div class="absolute inset-0 bg-gradient-to-b from-gray-900/95 to-gray-900"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-flex items-center bg-primary/20 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+      <i class="fa-solid fa-headset mr-2"></i>
+      Support 24/7
+    </span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
+      Contactez-nous
+    </h1>
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+      Notre équipe est disponible 24h/7j pour répondre à vos questions et vous accompagner dans votre location.
+    </p>
+  </div>
+</section>
 
-    <!-- WhatsApp Hero -->
-    <div class="max-w-3xl mx-auto mb-16">
+<!-- Main Content -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- WhatsApp Hero Card -->
+    <div class="relative -mt-32 mb-16">
       <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
          target="_blank"
          rel="noopener noreferrer"
-         class="group block bg-[#25D366] rounded-3xl p-10 text-center hover:shadow-premium-lg transition-all duration-300 transform hover:scale-[1.02]">
-        <div class="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+         class="group block bg-[#25D366] rounded-3xl p-10 md:p-12 text-center hover:shadow-2xl hover:shadow-[#25D366]/25 transition-all duration-300 hover:-translate-y-1">
+        <!-- Icon -->
+        <div class="w-24 h-24 mx-auto mb-6 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform">
           <i class="fa-brands fa-whatsapp text-6xl text-white"></i>
         </div>
-        <h2 class="text-3xl font-bold text-white mb-3">
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
           Écrivez-nous sur WhatsApp
         </h2>
-        <p class="text-white/90 text-lg mb-6">
-          Réponse rapide garantie - Disponible 24h/7j
+        <p class="text-white/90 text-lg mb-8 max-w-md mx-auto">
+          Réponse garantie en quelques minutes. C'est le moyen le plus rapide de nous contacter.
         </p>
-        <div class="inline-flex items-center bg-white text-[#25D366] font-bold py-3 px-8 rounded-full text-lg group-hover:bg-gray-100 transition-colors">
+        <!-- Button -->
+        <span class="inline-flex items-center bg-white text-[#25D366] font-bold py-4 px-8 rounded-full text-lg group-hover:bg-gray-100 transition-colors">
           <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
           Démarrer une conversation
-        </div>
+          <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+        </span>
       </a>
     </div>
 
     <!-- Other Contact Methods -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-      <!-- Téléphone -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      <!-- Phone -->
       <a href="tel:{{ site.data.site.contact.phone_raw }}"
-         class="group bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gold hover:shadow-premium transition-all duration-300">
+         class="group bg-white rounded-2xl border border-gray-200 p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         <div class="flex items-center">
-          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-300 flex-shrink-0">
-            <i class="fa-solid fa-phone text-2xl text-primary group-hover:text-white transition-colors duration-300"></i>
+          <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-phone text-2xl text-primary"></i>
           </div>
           <div class="ml-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Téléphone</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">Téléphone</h3>
             <p class="text-primary font-semibold text-lg">{{ site.data.site.contact.phone }}</p>
             <p class="text-gray-500 text-sm mt-1">Appelez-nous directement</p>
           </div>
@@ -57,13 +71,13 @@ description: Contactez Boyacars pour toute question concernant la location de vo
 
       <!-- Email -->
       <a href="mailto:{{ site.data.site.contact.email }}"
-         class="group bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gold hover:shadow-premium transition-all duration-300">
+         class="group bg-white rounded-2xl border border-gray-200 p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         <div class="flex items-center">
-          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-300 flex-shrink-0">
-            <i class="fa-solid fa-envelope text-2xl text-primary group-hover:text-white transition-colors duration-300"></i>
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-envelope text-2xl text-blue-500"></i>
           </div>
           <div class="ml-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">Email</h3>
             <p class="text-primary font-semibold">{{ site.data.site.contact.email_display }}</p>
             <p class="text-gray-500 text-sm mt-1">Pour vos demandes détaillées</p>
           </div>
@@ -71,27 +85,60 @@ description: Contactez Boyacars pour toute question concernant la location de vo
       </a>
     </div>
 
-    <!-- Availability Badge -->
-    <div class="text-center mb-16">
-      <div class="inline-flex items-center bg-gray-100 rounded-full px-8 py-4">
-        <i class="fa-solid fa-clock text-primary text-xl mr-3"></i>
-        <span class="text-gray-700 font-semibold text-lg">Disponible 24h/7j</span>
+    <!-- Info Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <!-- Address -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 text-center">
+        <div class="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fa-solid fa-location-dot text-xl text-purple-500"></i>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2">Adresse</h3>
+        <p class="text-gray-500 text-sm">{{ site.data.site.contact.address }}</p>
+      </div>
+
+      <!-- Hours -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 text-center">
+        <div class="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fa-solid fa-clock text-xl text-orange-500"></i>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2">Horaires</h3>
+        <p class="text-gray-500 text-sm">Disponible 24h/7j<br>Livraison & Assistance</p>
+      </div>
+
+      <!-- Response Time -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 text-center">
+        <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fa-solid fa-bolt text-xl text-primary"></i>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2">Temps de réponse</h3>
+        <p class="text-gray-500 text-sm">Moins de 5 minutes<br>sur WhatsApp</p>
       </div>
     </div>
 
-    <!-- Address Section -->
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-gray-50 rounded-2xl border border-gray-200 p-8 text-center">
-        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-          <i class="fa-solid fa-location-dot text-2xl text-primary"></i>
+    <!-- Trust Section -->
+    <div class="bg-white rounded-3xl border border-gray-200 p-8 md:p-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Besoin d'aide pour choisir ?</h3>
+          <p class="text-gray-500">Notre équipe vous conseille gratuitement pour trouver le véhicule idéal.</p>
         </div>
-        <h2 class="text-2xl font-display font-bold text-gray-900 mb-3">
-          Notre Adresse
-        </h2>
-        <p class="text-gray-600 text-lg">
-          {{ site.data.site.contact.address }}
-        </p>
+        <div class="flex items-center gap-6">
+          <div class="flex -space-x-3">
+            {% for review in site.data.reviews.reviews limit:3 %}
+              <img src="{{ review.picture }}" class="w-12 h-12 rounded-full border-3 border-white object-cover shadow-lg" alt="{{ review.name }}">
+            {% endfor %}
+          </div>
+          <div>
+            <div class="flex items-center mb-1">
+              {% for i in (1..5) %}
+                <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+              {% endfor %}
+            </div>
+            <span class="text-sm text-gray-500 font-medium">500+ clients satisfaits</span>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </section>

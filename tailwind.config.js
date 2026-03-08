@@ -22,8 +22,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

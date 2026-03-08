@@ -1,25 +1,61 @@
-<section class="py-20 bg-primary animate-fade-in">
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center text-white">
-      <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">
-        Prêt à Réserver ?
-      </h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Contactez-nous sur WhatsApp pour réserver votre véhicule. Disponible 24/7.
-      </p>
-      
-      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="inline-flex items-center bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:shadow-lg text-lg">
-        <i class="fa-brands fa-whatsapp text-3xl mr-3"></i>
-        Réserver sur WhatsApp
-      </a>
+<!-- CTA Section -->
+<section class="py-24 bg-gray-900 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2"></div>
+  </div>
 
-      <p class="mt-6 text-white/80">
-        <i class="fa-solid fa-phone mr-2"></i>
-        Ou appelez-nous : {{ site.data.site.contact.phone }}
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <!-- Badge -->
+      <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-5 py-2 rounded-full mb-8 border border-white/20">
+        <span class="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></span>
+        Disponible 24h/7j
+      </span>
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+        Prêt à Prendre<br>
+        <span class="text-primary">la Route ?</span>
+      </h2>
+
+      <!-- Subheading -->
+      <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Réservez votre véhicule en quelques clics. Notre équipe vous répond en moins de 5 minutes.
       </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#25D366]/25 hover:scale-105 group">
+          <i class="fa-brands fa-whatsapp text-2xl mr-3 group-hover:scale-110 transition-transform"></i>
+          Réserver sur WhatsApp
+        </a>
+        <a href="tel:{{ site.data.site.contact.phone_raw }}"
+           class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 border border-white/20 backdrop-blur-sm">
+          <i class="fa-solid fa-phone mr-3"></i>
+          {{ site.data.site.contact.phone }}
+        </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="flex flex-wrap items-center justify-center gap-8 text-gray-400">
+        <div class="flex items-center">
+          <i class="fa-solid fa-clock text-primary mr-2"></i>
+          <span class="text-sm">Réponse rapide</span>
+        </div>
+        <div class="flex items-center">
+          <i class="fa-solid fa-shield-check text-primary mr-2"></i>
+          <span class="text-sm">Paiement sécurisé</span>
+        </div>
+        <div class="flex items-center">
+          <i class="fa-solid fa-xmark text-primary mr-2"></i>
+          <span class="text-sm">Annulation gratuite</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

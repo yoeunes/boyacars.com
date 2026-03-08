@@ -1,26 +1,55 @@
-<section class="py-20 bg-white animate-fade-in">
+<!-- FAQ Section -->
+<section class="py-24 bg-white">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+      <span class="inline-flex items-center bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+        <i class="fa-solid fa-circle-question mr-2"></i>
+        FAQ
+      </span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
         Questions Fréquentes
       </h2>
-      <p class="text-lg text-gray-600">
+      <p class="text-xl text-gray-500">
         Tout ce que vous devez savoir sur la location chez Boyacars
       </p>
     </div>
 
+    <!-- Accordion -->
     <div class="space-y-4" data-controller="accordion">
       {% for question in site.data.faqs.questions %}
-        <div class="border border-gray-200 rounded-xl overflow-hidden" data-accordion-target="item">
-          <button data-action="click->accordion#toggle" aria-expanded="false" class="w-full text-left p-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary">
-            <span class="font-semibold text-gray-900 pr-4">{{ question.question }}</span>
-            <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:border-primary/30 transition-colors" data-accordion-target="item">
+          <button
+            data-action="click->accordion#toggle"
+            aria-expanded="false"
+            class="w-full text-left p-6 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary">
+            <span class="font-semibold text-gray-900 pr-4 text-lg">{{ question.question }}</span>
+            <span class="flex-shrink-0 w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-all">
+              <i class="fa-solid fa-chevron-down text-gray-400 group-hover:text-white transition-all duration-300"></i>
+            </span>
           </button>
-          <div class="accordion__content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300">
-            <p class="p-6 text-gray-600">{{ question.answer }}</p>
+          <div class="accordion__content max-h-0 overflow-hidden transition-all duration-300">
+            <div class="px-6 pb-6">
+              <div class="bg-white rounded-xl p-5 border border-gray-100">
+                <p class="text-gray-600 leading-relaxed">{{ question.answer }}</p>
+              </div>
+            </div>
           </div>
         </div>
       {% endfor %}
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-500 mb-4">Vous avez d'autres questions ?</p>
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center text-primary hover:text-primary-dark font-semibold transition-colors group">
+        <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+        Contactez-nous sur WhatsApp
+        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+      </a>
     </div>
   </div>
 </section>

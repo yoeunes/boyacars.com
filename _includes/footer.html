@@ -1,37 +1,49 @@
-<footer class="bg-gray-900 text-white py-16">
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-      <div class="md:col-span-2">
+<!-- Footer -->
+<footer class="bg-gray-950 text-white pt-20 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
         <img src="{{ site.data.site.logo_light }}" alt="{{ site.data.site.name }}" class="h-12 mb-6">
-        <p class="text-gray-400 text-lg mb-6">
-          Boyacars - Location de voitures premium à Marrakech depuis 2014. Service professionnel, véhicules récents, et satisfaction client garantie.
+        <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-md">
+          Votre partenaire de confiance pour la location de voitures premium à Marrakech depuis 2014.
         </p>
-        <div class="space-y-3">
+
+        <!-- Contact Info -->
+        <div class="space-y-4">
+          <a href="tel:{{ site.data.site.contact.phone_raw }}" class="flex items-center text-gray-300 hover:text-primary transition-colors group">
+            <span class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+              <i class="fa-solid fa-phone text-primary"></i>
+            </span>
+            <span class="font-medium">{{ site.data.site.contact.phone }}</span>
+          </a>
+          <a href="mailto:{{ site.data.site.contact.email }}" class="flex items-center text-gray-300 hover:text-primary transition-colors group">
+            <span class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+              <i class="fa-solid fa-envelope text-primary"></i>
+            </span>
+            <span class="font-medium">{{ site.data.site.contact.email_display }}</span>
+          </a>
           <div class="flex items-center text-gray-300">
-            <i class="fa-solid fa-phone text-primary mr-3"></i>
-            <a href="tel:{{ site.data.site.contact.phone_raw }}" class="hover:text-primary transition-colors">
-              {{ site.data.site.contact.phone }}
-            </a>
-          </div>
-          <div class="flex items-center text-gray-300">
-            <i class="fa-solid fa-envelope text-primary mr-3"></i>
-            <a href="mailto:{{ site.data.site.contact.email }}" class="hover:text-primary transition-colors">
-              {{ site.data.site.contact.email_display }}
-            </a>
-          </div>
-          <div class="flex items-center text-gray-300">
-            <i class="fa-solid fa-location-dot text-primary mr-3"></i>
-            <span>{{ site.data.site.contact.address }}</span>
+            <span class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center mr-4">
+              <i class="fa-solid fa-location-dot text-primary"></i>
+            </span>
+            <span class="font-medium">{{ site.data.site.contact.address }}</span>
           </div>
         </div>
       </div>
 
+      <!-- Navigation Column -->
       <div>
-        <h3 class="text-lg font-bold mb-6">Navigation</h3>
-        <ul class="space-y-3">
+        <h3 class="text-lg font-bold mb-6 flex items-center">
+          <span class="w-8 h-0.5 bg-primary mr-3"></span>
+          Navigation
+        </h3>
+        <ul class="space-y-4">
           {% for item in site.data.navigation.main %}
             <li>
-              <a href="{{ item.url }}" class="text-gray-400 hover:text-primary transition-colors">
+              <a href="{{ item.url }}" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                <i class="fa-solid fa-chevron-right text-xs text-primary mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all"></i>
                 {{ item.title }}
               </a>
             </li>
@@ -39,22 +51,53 @@
         </ul>
       </div>
 
+      <!-- CTA Column -->
       <div>
-        <h3 class="text-lg font-bold mb-6">Contact</h3>
+        <h3 class="text-lg font-bold mb-6 flex items-center">
+          <span class="w-8 h-0.5 bg-primary mr-3"></span>
+          Réservation
+        </h3>
+        <p class="text-gray-400 mb-6">
+          Réservez votre véhicule en quelques clics via WhatsApp.
+        </p>
         <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 w-full justify-center">
+           class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-3.5 px-6 rounded-xl transition-all duration-300 w-full justify-center hover:shadow-lg hover:shadow-[#25D366]/25">
           <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
           WhatsApp
         </a>
+
+        <!-- Hours -->
+        <div class="mt-8 p-4 bg-gray-800/50 rounded-xl border border-gray-800">
+          <div class="flex items-center text-sm">
+            <i class="fa-solid fa-clock text-primary mr-3"></i>
+            <div>
+              <div class="text-white font-medium">Disponible 24h/7j</div>
+              <div class="text-gray-500">Livraison & Assistance</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Bottom Bar -->
     <div class="border-t border-gray-800 pt-8">
-      <p class="text-center text-gray-500 text-sm">
-        © {{ 'now' | date: "%Y" }} {{ site.data.site.name }}. Tous droits réservés.
-      </p>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">
+          © {{ 'now' | date: "%Y" }} {{ site.data.site.name }}. Tous droits réservés.
+        </p>
+        <div class="flex items-center gap-6">
+          <span class="text-gray-500 text-sm flex items-center">
+            <i class="fa-solid fa-shield-check text-primary mr-2"></i>
+            Paiement sécurisé
+          </span>
+          <span class="text-gray-500 text-sm flex items-center">
+            <i class="fa-solid fa-lock text-primary mr-2"></i>
+            Données protégées
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

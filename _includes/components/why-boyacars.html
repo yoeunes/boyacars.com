@@ -1,22 +1,46 @@
-<section class="py-20 bg-gray-50 animate-fade-in">
-  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+<!-- Why Boyacars Section -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span class="inline-flex items-center bg-primary/10 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+        <i class="fa-solid fa-sparkles mr-2"></i>
+        Nos Avantages
+      </span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
         {{ site.data.features.title }}
       </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-500 leading-relaxed">
         {{ site.data.features.subtitle }}
       </p>
     </div>
 
+    <!-- Features Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for option in site.data.features.options %}
-        <div class="bg-white rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:border-gold hover:shadow-premium group">
-          <div class="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-xl mb-5 group-hover:bg-primary transition-colors duration-300">
-            <i class="{{ option.icon }} text-3xl text-primary group-hover:text-white transition-colors"></i>
+        <div class="group relative bg-gray-50 rounded-3xl p-8 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+          <!-- Icon -->
+          <div class="relative mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+              <i class="{{ option.icon }} text-3xl text-primary"></i>
+            </div>
+            <!-- Decorative dot -->
+            <div class="absolute -top-1 -right-1 w-4 h-4 bg-primary/20 rounded-full group-hover:bg-primary group-hover:scale-150 transition-all duration-300"></div>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">{{ option.title }}</h3>
-          <p class="text-gray-600">{{ option.description }}</p>
+
+          <!-- Content -->
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+            {{ option.title }}
+          </h3>
+          <p class="text-gray-500 leading-relaxed">
+            {{ option.description }}
+          </p>
+
+          <!-- Arrow indicator -->
+          <div class="mt-6 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-sm font-semibold">En savoir plus</span>
+            <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+          </div>
         </div>
       {% endfor %}
     </div>
