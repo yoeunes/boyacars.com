@@ -15,9 +15,9 @@ doors: 5
 
 rates:
   - duration: 1
-    price: 350
-  - duration: 5
     price: 300
+  - duration: 5
+    price: 250
 
 image: "location-peugeot-208-diesel-automatique-rouge.png"
 
@@ -68,7 +68,7 @@ specifications:
 
 seo:
   title: "Location Peugeot 208 à Marrakech | Boyacars"
-  description: "Louez une Peugeot 208 à Marrakech. Citadine stylée, diesel, manuelle. À partir de 300 DH/jour."
+  description: "Louez une Peugeot 208 à Marrakech. Citadine stylée, diesel, manuelle. À partir de 250 DH/jour."
 ---
 
 <ul>

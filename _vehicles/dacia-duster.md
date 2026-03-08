@@ -15,9 +15,9 @@ doors: 5
 
 rates:
   - duration: 1
-    price: 300
+    price: 450
   - duration: 5
-    price: 250
+    price: 400
 
 image: "location-dacia-duster.png"
 
@@ -65,7 +65,7 @@ specifications:
 
 seo:
   title: "Location Dacia Duster à Marrakech | Boyacars"
-  description: "Louez un Dacia Duster à Marrakech. SUV spacieux, diesel, manuelle. À partir de 250 DH/jour."
+  description: "Louez un Dacia Duster à Marrakech. SUV spacieux, diesel, manuelle. À partir de 400 DH/jour."
 ---
 
 <ul>

@@ -15,9 +15,9 @@ doors: 5
 
 rates:
   - duration: 1
-    price: 800
+    price: 1500
   - duration: 5
-    price: 700
+    price: 1200
 
 image: "location-de-voiture-land-rover-range-rover-evoque-automatique-diesel-blanc.png"
 
@@ -88,7 +88,7 @@ specifications:
 
 seo:
   title: "Location Land Rover Range Rover Evoque à Marrakech | Boyacars"
-  description: "Louez un Land Rover Range Rover Evoque à Marrakech. SUV premium, automatique, diesel. À partir de 700 DH/jour."
+  description: "Louez un Land Rover Range Rover Evoque à Marrakech. SUV premium, automatique, diesel. À partir de 1200 DH/jour."
 ---
 
 <ul>
