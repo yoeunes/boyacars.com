@@ -42,27 +42,27 @@ author: Younes ENNAJI
         <tr>
           <td class="px-4 py-3">Autoroute</td>
           <td class="px-4 py-3 font-semibold">120 km/h</td>
-          <td class="px-4 py-3 text-red-600">300-600 DH</td>
+          <td class="px-4 py-3 font-medium text-gray-700">300-600 DH</td>
         </tr>
         <tr class="bg-gray-50">
           <td class="px-4 py-3">Route nationale</td>
           <td class="px-4 py-3 font-semibold">100 km/h</td>
-          <td class="px-4 py-3 text-red-600">200-400 DH</td>
+          <td class="px-4 py-3 font-medium text-gray-700">200-400 DH</td>
         </tr>
         <tr>
           <td class="px-4 py-3">Route secondaire</td>
           <td class="px-4 py-3 font-semibold">80 km/h</td>
-          <td class="px-4 py-3 text-red-600">150-300 DH</td>
+          <td class="px-4 py-3 font-medium text-gray-700">150-300 DH</td>
         </tr>
         <tr class="bg-gray-50">
           <td class="px-4 py-3">Ville</td>
           <td class="px-4 py-3 font-semibold">60 km/h</td>
-          <td class="px-4 py-3 text-red-600">100-200 DH</td>
+          <td class="px-4 py-3 font-medium text-gray-700">100-200 DH</td>
         </tr>
         <tr>
           <td class="px-4 py-3">Zone scolaire</td>
           <td class="px-4 py-3 font-semibold">40 km/h</td>
-          <td class="px-4 py-3 text-red-600">200-400 DH</td>
+          <td class="px-4 py-3 font-medium text-gray-700">200-400 DH</td>
         </tr>
       </tbody>
     </table>
@@ -71,21 +71,24 @@ author: Younes ENNAJI
   {% include blog/tip-box.html type="warning" title="Attention" text="Les limitations sont strictement appliquées. Radars automatiques sur autoroutes et contrôles fréquents aux entrées de villes." %}
 
   <div class="grid md:grid-cols-3 gap-4 mt-6">
-    <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">INTERDIT</p>
       <h4 class="font-bold text-gray-900 mb-2">Alcool au Volant</h4>
-      <p class="text-red-600 font-bold text-lg mb-1">0 g/l</p>
+      <p class="text-primary font-bold text-lg mb-1">0 g/l</p>
       <p class="text-sm text-gray-600">Tolérance zéro. Amende 200-500 DH + retrait de permis possible.</p>
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">ATTENTION</p>
       <h4 class="font-bold text-gray-900 mb-2">Téléphone au Volant</h4>
-      <p class="text-amber-600 font-bold text-lg mb-1">Interdit en main</p>
+      <p class="text-gray-900 font-bold text-lg mb-1">Interdit en main</p>
       <p class="text-sm text-gray-600">Kit mains-libres autorisé. Amende 200-300 DH.</p>
     </div>
 
-    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">OBLIGATOIRE</p>
       <h4 class="font-bold text-gray-900 mb-2">Ceinture de Sécurité</h4>
-      <p class="text-blue-600 font-bold text-lg mb-1">Obligatoire</p>
+      <p class="text-gray-900 font-bold text-lg mb-1">Pour tous</p>
       <p class="text-sm text-gray-600">Pour tous les passagers. Amende 50-100 DH par passager non attaché.</p>
     </div>
   </div>
@@ -95,8 +98,9 @@ author: Younes ENNAJI
   {% include blog/section-header.html title="État des Routes" %}
 
   <div class="space-y-4">
-    <div class="bg-green-50 border border-green-200 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-3">Autoroutes (Excellent)</h4>
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">EXCELLENT</p>
+      <h4 class="font-bold text-gray-900 mb-3">Autoroutes</h4>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <p class="text-sm font-semibold text-gray-900 mb-2">Autoroutes principales :</p>
@@ -119,8 +123,9 @@ author: Younes ENNAJI
       </div>
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-3">Routes Nationales (Variables)</h4>
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">VARIABLE</p>
+      <h4 class="font-bold text-gray-900 mb-3">Routes Nationales</h4>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <p class="text-sm font-semibold text-gray-900 mb-2">Routes principales :</p>
@@ -141,8 +146,9 @@ author: Younes ENNAJI
       </div>
     </div>
 
-    <div class="bg-red-50 border border-red-200 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-3">Routes Secondaires (Prudence Requise)</h4>
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">PRUDENCE</p>
+      <h4 class="font-bold text-gray-900 mb-3">Routes Secondaires</h4>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <p class="text-sm font-semibold text-gray-900 mb-2">Routes de montagne :</p>
@@ -180,17 +186,17 @@ author: Younes ENNAJI
         <tr>
           <td class="px-4 py-3 font-semibold">Essence (SP95)</td>
           <td class="px-4 py-3">12,50-13,30 DH/litre</td>
-          <td class="px-4 py-3 text-green-600">Partout</td>
+          <td class="px-4 py-3 text-gray-700">Partout</td>
         </tr>
         <tr class="bg-gray-50">
           <td class="px-4 py-3 font-semibold">Diesel (Gasoil)</td>
           <td class="px-4 py-3">10,70-10,90 DH/litre</td>
-          <td class="px-4 py-3 text-green-600">Partout</td>
+          <td class="px-4 py-3 text-gray-700">Partout</td>
         </tr>
         <tr>
           <td class="px-4 py-3 font-semibold">GPL</td>
           <td class="px-4 py-3">6,50-7,00 DH/litre</td>
-          <td class="px-4 py-3 text-amber-600">Grandes villes</td>
+          <td class="px-4 py-3 text-gray-700">Grandes villes</td>
         </tr>
       </tbody>
     </table>
@@ -266,27 +272,31 @@ author: Younes ENNAJI
   {% include blog/section-header.html title="Numéros d'Urgence" %}
 
   <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-    <div class="bg-red-50 border border-red-200 rounded-xl p-5 text-center">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
+      <i class="fa-duotone fa-shield-halved text-gray-500 text-xl mb-2"></i>
       <p class="font-bold text-gray-900">Police</p>
-      <p class="text-red-600 text-2xl font-bold">117</p>
+      <p class="text-primary text-2xl font-bold">117</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
 
-    <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 text-center">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
+      <i class="fa-duotone fa-fire-extinguisher text-gray-500 text-xl mb-2"></i>
       <p class="font-bold text-gray-900">Pompiers</p>
-      <p class="text-orange-600 text-2xl font-bold">15</p>
+      <p class="text-primary text-2xl font-bold">15</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
 
-    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
+      <i class="fa-duotone fa-hospital text-gray-500 text-xl mb-2"></i>
       <p class="font-bold text-gray-900">SAMU</p>
-      <p class="text-blue-600 text-2xl font-bold">141</p>
+      <p class="text-primary text-2xl font-bold">141</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
 
-    <div class="bg-green-50 border border-green-200 rounded-xl p-5 text-center">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
+      <i class="fa-duotone fa-phone-rotary text-gray-500 text-xl mb-2"></i>
       <p class="font-bold text-gray-900">Boyacars</p>
-      <p class="text-green-600 text-lg font-bold">+212 662 825 804</p>
+      <p class="text-primary text-lg font-bold">+212 662 825 804</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
   </div>
@@ -313,14 +323,14 @@ author: Younes ENNAJI
         <li><strong>Parking payant :</strong> 5-20 DH/heure selon zone</li>
         <li><strong>Paiement :</strong> Espèces aux agents de parking</li>
       </ul>
-      <div class="mt-4 bg-red-50 rounded-lg p-3">
-        <p class="text-sm text-red-700 font-semibold">Stationnement interdit :</p>
-        <ul class="text-xs text-red-600 mt-1 space-y-1 list-disc list-inside">
+      <div class="mt-4 bg-gray-100 rounded-lg p-3">
+        <p class="text-sm text-gray-900 font-semibold">Stationnement interdit :</p>
+        <ul class="text-xs text-gray-700 mt-1 space-y-1 list-disc list-inside">
           <li>Double file</li>
           <li>Trottoirs</li>
           <li>Zones jaunes</li>
         </ul>
-        <p class="text-xs text-red-600 mt-2">Amende : 50-150 DH + fourrière possible</p>
+        <p class="text-xs text-gray-600 mt-2">Amende : 50-150 DH + fourrière possible</p>
       </div>
     </div>
 
@@ -337,8 +347,8 @@ author: Younes ENNAJI
 
   <div class="grid md:grid-cols-2 gap-4">
     <div class="bg-gray-900 text-white rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">DECONSEILLE</p>
       <h4 class="font-bold mb-3">Nuit</h4>
-      <p class="text-red-400 font-semibold mb-2">Déconseillé</p>
       <ul class="text-sm text-gray-300 space-y-1 list-disc list-inside">
         <li>Éclairage public variable</li>
         <li>Animaux errants fréquents</li>
@@ -346,8 +356,9 @@ author: Younes ENNAJI
       </ul>
     </div>
 
-    <div class="bg-blue-50 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-3">Pluie (Rare mais Possible)</h4>
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">PRUDENCE</p>
+      <h4 class="font-bold text-gray-900 mb-3">Pluie</h4>
       <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside">
         <li>Routes glissantes (poussière + eau)</li>
         <li>Visibilité réduite</li>
@@ -355,7 +366,8 @@ author: Younes ENNAJI
       </ul>
     </div>
 
-    <div class="bg-amber-50 rounded-xl p-6">
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">ATTENTION</p>
       <h4 class="font-bold text-gray-900 mb-3">Montagne (Atlas, Rif)</h4>
       <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside">
         <li>Virages serrés</li>
@@ -364,8 +376,9 @@ author: Younes ENNAJI
       </ul>
     </div>
 
-    <div class="bg-red-50 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-3">Chaleur (Été)</h4>
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+      <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">ETE</p>
+      <h4 class="font-bold text-gray-900 mb-3">Chaleur</h4>
       <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside">
         <li>Jusqu'à 60°C intérieur</li>
         <li>Risque de surchauffe moteur</li>
@@ -401,7 +414,7 @@ author: Younes ENNAJI
     </div>
   </div>
 
-  <div class="mt-4 bg-green-50 border border-green-200 rounded-xl p-5">
+  <div class="mt-4 bg-gray-50 border border-gray-200 rounded-xl p-5">
     <p class="text-sm text-gray-700"><strong>Boyacars :</strong> Assistance 24/7 pour les véhicules loués. Appelez-nous immédiatement en cas de problème.</p>
   </div>
 </section>
@@ -452,19 +465,19 @@ author: Younes ENNAJI
     <h2 class="text-2xl font-display font-bold mb-4 text-center">Points Clés à Retenir</h2>
     <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-6">
       <div class="flex items-start">
-        <span class="text-green-400 mr-2 mt-1">✓</span>
+        <span class="text-primary mr-2 mt-1">✓</span>
         <span class="text-gray-300">Conduite à droite, limitations strictes</span>
       </div>
       <div class="flex items-start">
-        <span class="text-green-400 mr-2 mt-1">✓</span>
+        <span class="text-primary mr-2 mt-1">✓</span>
         <span class="text-gray-300">Prudence sur routes secondaires</span>
       </div>
       <div class="flex items-start">
-        <span class="text-green-400 mr-2 mt-1">✓</span>
+        <span class="text-primary mr-2 mt-1">✓</span>
         <span class="text-gray-300">Prévoyez de l'argent liquide</span>
       </div>
       <div class="flex items-start">
-        <span class="text-green-400 mr-2 mt-1">✓</span>
+        <span class="text-primary mr-2 mt-1">✓</span>
         <span class="text-gray-300">Évitez la conduite nocturne</span>
       </div>
     </div>

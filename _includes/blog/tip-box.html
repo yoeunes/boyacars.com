@@ -12,20 +12,17 @@
 {% assign box_title = include.title | default: "Conseil" %}
 
 {% if box_type == "warning" %}
-  {% assign bg_color = "bg-amber-50" %}
-  {% assign border_color = "border-amber-300" %}
-  {% assign text_accent = "text-amber-700" %}
+  {% assign icon = "fa-duotone fa-triangle-exclamation" %}
 {% elsif box_type == "info" %}
-  {% assign bg_color = "bg-blue-50" %}
-  {% assign border_color = "border-blue-300" %}
-  {% assign text_accent = "text-blue-700" %}
+  {% assign icon = "fa-duotone fa-circle-info" %}
 {% else %}
-  {% assign bg_color = "bg-gray-50" %}
-  {% assign border_color = "border-gray-300" %}
-  {% assign text_accent = "text-gray-700" %}
+  {% assign icon = "fa-duotone fa-lightbulb" %}
 {% endif %}
 
-<div class="{{ bg_color }} border-l-4 {{ border_color }} rounded-r-lg p-4">
-  <p class="font-semibold {{ text_accent }} text-sm mb-1">{{ box_title }}</p>
-  <p class="text-gray-700 text-sm">{{ include.text }}</p>
+<div class="bg-gray-50 border-l-4 border-gray-300 rounded-r-lg p-4 flex items-start gap-3">
+  <i class="{{ icon }} text-gray-500 text-lg mt-0.5 flex-shrink-0"></i>
+  <div>
+    <p class="font-semibold text-gray-900 text-sm mb-1">{{ box_title }}</p>
+    <p class="text-gray-700 text-sm">{{ include.text }}</p>
+  </div>
 </div>

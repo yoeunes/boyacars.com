@@ -47,12 +47,12 @@ author: Younes ENNAJI
         <div class="bg-gray-50 rounded-lg p-4">
           <h5 class="font-semibold text-gray-900 mb-2 text-sm">Check-list départ :</h5>
           <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-700">
-            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Plein d'essence</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Niveaux vérifiés</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Bouteilles d'eau (2L/pers)</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>GPS/maps hors ligne</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Lunettes de soleil</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Crème solaire</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Plein d'essence</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Niveaux vérifiés</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Bouteilles d'eau (2L/pers)</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✓</span>GPS/maps hors ligne</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Lunettes de soleil</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Crème solaire</li>
           </ul>
         </div>
       </div>
@@ -133,7 +133,7 @@ author: Younes ENNAJI
         Parking Gratuit
       </h4>
       <p class="text-sm text-gray-600 mb-2">Extérieur médina</p>
-      <p class="text-green-600 font-semibold">Gratuit</p>
+      <p class="text-primary font-semibold">Gratuit</p>
       <p class="text-xs text-gray-500 mt-2">20-30 min à pied, moins sécurisé la nuit</p>
     </div>
   </div>
@@ -151,7 +151,7 @@ author: Younes ENNAJI
           <h4 class="font-bold text-gray-900 text-lg">1. Médina Classée UNESCO</h4>
           <p class="text-sm text-gray-500">Entrée gratuite • Remparts ~10 DH</p>
         </div>
-        <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">UNESCO</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">UNESCO</span>
       </div>
       <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-700 list-disc list-inside">
         <li>Remparts portugais du XVIIIe siècle</li>
@@ -167,7 +167,7 @@ author: Younes ENNAJI
           <h4 class="font-bold text-gray-900 text-lg">2. Port de Pêche</h4>
           <p class="text-sm text-gray-500">Entrée gratuite • 6h-14h (activité le matin)</p>
         </div>
-        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Gratuit</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">GRATUIT</span>
       </div>
       <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-700 list-disc list-inside">
         <li>Bateaux de pêche bleus traditionnels</li>
@@ -184,7 +184,7 @@ author: Younes ENNAJI
           <h4 class="font-bold text-gray-900 text-lg">3. Plage de Sidi Kaouki</h4>
           <p class="text-sm text-gray-500">20 km au sud • 25 min en voiture</p>
         </div>
-        <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold">Plage</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">PLAGE</span>
       </div>
       <div class="grid md:grid-cols-2 gap-4 mb-4">
         <div>
@@ -309,7 +309,7 @@ author: Younes ENNAJI
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200">
-        <tr class="bg-green-50">
+        <tr class="bg-gray-50">
           <td class="px-4 py-3 font-semibold">Printemps (mars-mai)</td>
           <td class="px-4 py-3">Températures douces, fleurs</td>
           <td class="px-4 py-3">Haute saison, prix élevés</td>
@@ -319,7 +319,7 @@ author: Younes ENNAJI
           <td class="px-4 py-3">Fêtes, ambiance</td>
           <td class="px-4 py-3">Chaud (25-30°C), vent fort</td>
         </tr>
-        <tr class="bg-green-50">
+        <tr class="bg-gray-50">
           <td class="px-4 py-3 font-semibold">Automne (sept-nov)</td>
           <td class="px-4 py-3">Idéal, doux, peu de foule</td>
           <td class="px-4 py-3">Ouragan possible (rare)</td>
@@ -366,8 +366,11 @@ author: Younes ENNAJI
 <section class="mb-12">
   {% include blog/section-header.html title="En Cas de Problème" %}
 
-  <div class="bg-red-50 border border-red-200 rounded-xl p-6">
-    <h4 class="font-bold text-gray-900 mb-4">Assistance Boyacars : +212 662 825 804 (WhatsApp, 24/7)</h4>
+  <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+    <div class="flex items-center gap-2 mb-4">
+      <i class="fa-duotone fa-phone-rotary text-gray-500"></i>
+      <h4 class="font-bold text-gray-900">Assistance Boyacars : <span class="text-primary">+212 662 825 804</span> (WhatsApp, 24/7)</h4>
+    </div>
     <div class="grid md:grid-cols-2 gap-4">
       <div>
         <p class="font-semibold text-gray-900 mb-2">En cas de panne :</p>
