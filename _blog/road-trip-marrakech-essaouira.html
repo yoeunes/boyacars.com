@@ -7,45 +7,39 @@ description: Planifiez votre road trip de Marrakech à Essaouira. Itinéraire d�
 image: /assets/images/blog/road-trip-essaouira.jpg
 categories: [Road Trips]
 tags: [essaouira, road trip, marrakech, atlantique]
-author: Boyacars
+author: Younes ENNAJI
 ---
 
 <p class="text-xl text-gray-600 mb-8 leading-relaxed">
   La route Marrakech-Essaouira est l'une des plus belles excursions au départ de Marrakech. Ce guide complet vous accompagne pour un voyage inoubliable vers la "Cité du Vent".
 </p>
 
-<!-- Informations Générales -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-car" title="Informations Générales" %}
+  {% include blog/section-header.html title="Informations Générales" %}
 
   <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-    {% include blog/info-card.html icon="fa-road" label="Distance totale" value="170 km" %}
-    {% include blog/info-card.html icon="fa-clock" label="Temps de trajet" value="3h" %}
-    {% include blog/info-card.html icon="fa-route" label="Route principale" value="A3 + N8" %}
-    {% include blog/info-card.html icon="fa-coins" label="Péage" value="~36 DH (jusqu'à Chichaoua)" %}
+    {% include blog/info-card.html label="Distance totale" value="170 km" %}
+    {% include blog/info-card.html label="Temps de trajet" value="3h" %}
+    {% include blog/info-card.html label="Route principale" value="A3 + N8" %}
+    {% include blog/info-card.html label="Péage" value="~36 DH" %}
   </div>
 
   <div class="grid md:grid-cols-2 gap-4">
-    {% include blog/info-card.html icon="fa-car-side" label="Véhicule recommandé" value="Citadine ou SUV" %}
-    {% include blog/info-card.html icon="fa-gas-pump" label="Carburant estimé" value="150-200 DH (A/R)" %}
+    {% include blog/info-card.html label="Véhicule recommandé" value="Citadine ou SUV" %}
+    {% include blog/info-card.html label="Carburant estimé" value="150-200 DH (A/R)" %}
   </div>
 </section>
 
-<!-- Itinéraire Détaillé -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-map-pin" title="Itinéraire Détaillé - A3 puis N8" %}
+  {% include blog/section-header.html title="Itinéraire Détaillé - A3 puis N8" %}
 
   <div class="relative">
-    <!-- Timeline -->
-    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20"></div>
+    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
 
-    <!-- Étape 1: Départ -->
     <div class="relative pl-12 pb-8">
-      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
-        <i class="fa-solid fa-play"></i>
-      </div>
+      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">▶</div>
       <div class="bg-white border border-gray-200 rounded-xl p-6">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Départ : Marrakech</h4>
           <span class="text-primary font-semibold">8h00</span>
         </div>
@@ -53,58 +47,53 @@ author: Boyacars
         <div class="bg-gray-50 rounded-lg p-4">
           <h5 class="font-semibold text-gray-900 mb-2 text-sm">Check-list départ :</h5>
           <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-700">
-            <li class="flex items-start"><span class="text-green-500 mr-2">&#10003;</span>Plein d'essence</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">&#10003;</span>Niveaux vérifiés</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">&#10003;</span>Bouteilles d'eau (2L/pers)</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">&#10003;</span>GPS/maps hors ligne</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">&#10003;</span>Lunettes de soleil</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">&#10003;</span>Crème solaire</li>
+            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Plein d'essence</li>
+            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Niveaux vérifiés</li>
+            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Bouteilles d'eau (2L/pers)</li>
+            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>GPS/maps hors ligne</li>
+            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Lunettes de soleil</li>
+            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Crème solaire</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Étape 2: Péage -->
     <div class="relative pl-12 pb-8">
       <div class="absolute left-0 w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
       <div class="bg-white border border-gray-200 rounded-xl p-6">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Péage de Marrakech</h4>
           <span class="text-gray-500">8h15 • 15 km</span>
         </div>
         <ul class="text-sm text-gray-600 space-y-1">
-          <li><i class="fa-solid fa-coins text-primary mr-2"></i>Péage : ~36 DH (jusqu'à Chichaoua)</li>
-          <li><i class="fa-solid fa-road text-primary mr-2"></i>Autoroute A3 direction Chichaoua, puis sortie vers N8</li>
-          <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i>État : Excellente, 2x2 voies</li>
+          <li><strong>Péage :</strong> ~36 DH (jusqu'à Chichaoua)</li>
+          <li><strong>Route :</strong> Autoroute A3 direction Chichaoua, puis sortie vers N8</li>
+          <li><strong>État :</strong> Excellente, 2x2 voies</li>
         </ul>
       </div>
     </div>
 
-    <!-- Étape 3: Aire de repos -->
     <div class="relative pl-12 pb-8">
       <div class="absolute left-0 w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
       <div class="bg-white border border-gray-200 rounded-xl p-6">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Aire de Repos de Chichaoua</h4>
           <span class="text-gray-500">9h00 • 50 km</span>
         </div>
         <p class="text-sm text-gray-600 mb-3">Sortie Chichaoua, puis voie express N8 (gratuite) jusqu'à Essaouira. Pause café recommandée (15-20 min)</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-solid fa-gas-pump mr-1"></i>Station-service</span>
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-solid fa-mug-hot mr-1"></i>Café-restaurant</span>
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-solid fa-restroom mr-1"></i>Toilettes</span>
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-solid fa-square-parking mr-1"></i>Parking gratuit</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Station-service</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Café-restaurant</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Toilettes</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Parking gratuit</span>
         </div>
       </div>
     </div>
 
-    <!-- Étape 4: Arrivée -->
     <div class="relative pl-12">
-      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
-        <i class="fa-solid fa-flag-checkered"></i>
-      </div>
+      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">🏁</div>
       <div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Arrivée : Essaouira</h4>
           <span class="text-primary font-semibold">11h00 • 170 km</span>
         </div>
@@ -114,14 +103,13 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Parking -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-square-parking" title="Parkings Recommandés" %}
+  {% include blog/section-header.html title="Parkings Recommandés" %}
 
   <div class="grid md:grid-cols-3 gap-4">
     <div class="bg-white border border-gray-200 rounded-xl p-5">
-      <h4 class="font-bold text-gray-900 mb-2 flex items-center">
-        <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm mr-2">1</span>
+      <h4 class="font-bold text-gray-900 mb-2">
+        <span class="text-primary mr-2">1.</span>
         Parking du Port
       </h4>
       <p class="text-sm text-gray-600 mb-2">Proche du centre, sécurisé</p>
@@ -130,8 +118,8 @@ author: Boyacars
     </div>
 
     <div class="bg-white border border-gray-200 rounded-xl p-5">
-      <h4 class="font-bold text-gray-900 mb-2 flex items-center">
-        <span class="w-6 h-6 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm mr-2">2</span>
+      <h4 class="font-bold text-gray-900 mb-2">
+        <span class="text-gray-400 mr-2">2.</span>
         Parking Av. Oued El Makhazine
       </h4>
       <p class="text-sm text-gray-600 mb-2">Moins cher, plus de places</p>
@@ -140,8 +128,8 @@ author: Boyacars
     </div>
 
     <div class="bg-white border border-gray-200 rounded-xl p-5">
-      <h4 class="font-bold text-gray-900 mb-2 flex items-center">
-        <span class="w-6 h-6 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm mr-2">3</span>
+      <h4 class="font-bold text-gray-900 mb-2">
+        <span class="text-gray-400 mr-2">3.</span>
         Parking Gratuit
       </h4>
       <p class="text-sm text-gray-600 mb-2">Extérieur médina</p>
@@ -151,16 +139,14 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Incontournables -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-bullseye" title="Les Incontournables d'Essaouira" %}
+  {% include blog/section-header.html title="Les Incontournables d'Essaouira" %}
 
   {% include blog/image.html src="/assets/images/blog/essaouira-port.jpg" alt="Porte historique du port d'Essaouira avec bateau bleu traditionnel" caption="La porte emblématique du port d'Essaouira" %}
 
   <div class="space-y-6">
-    <!-- Médina -->
     <div class="bg-white border border-gray-200 rounded-xl p-6">
-      <div class="flex items-start justify-between mb-4">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
         <div>
           <h4 class="font-bold text-gray-900 text-lg">1. Médina Classée UNESCO</h4>
           <p class="text-sm text-gray-500">Entrée gratuite • Remparts ~10 DH</p>
@@ -175,9 +161,8 @@ author: Boyacars
       </ul>
     </div>
 
-    <!-- Port -->
     <div class="bg-white border border-gray-200 rounded-xl p-6">
-      <div class="flex items-start justify-between mb-4">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
         <div>
           <h4 class="font-bold text-gray-900 text-lg">2. Port de Pêche</h4>
           <p class="text-sm text-gray-500">Entrée gratuite • 6h-14h (activité le matin)</p>
@@ -193,9 +178,8 @@ author: Boyacars
       {% include blog/tip-box.html text="Arrivez avant 10h pour voir l'activité du port." %}
     </div>
 
-    <!-- Plage Sidi Kaouki -->
     <div class="bg-white border border-gray-200 rounded-xl p-6">
-      <div class="flex items-start justify-between mb-4">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
         <div>
           <h4 class="font-bold text-gray-900 text-lg">3. Plage de Sidi Kaouki</h4>
           <p class="text-sm text-gray-500">20 km au sud • 25 min en voiture</p>
@@ -225,9 +209,8 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Où Manger -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-utensils" title="Où Manger à Essaouira" %}
+  {% include blog/section-header.html title="Où Manger à Essaouira" %}
 
   <div class="grid md:grid-cols-2 gap-4">
     <div class="bg-gray-50 rounded-xl p-5">
@@ -256,40 +239,29 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Budget -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-coins" title="Budget Estimatif Complet" %}
+  {% include blog/section-header.html title="Budget Estimatif Complet" %}
 
   <div class="grid md:grid-cols-2 gap-6">
     <div class="bg-white border border-gray-200 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-4 flex items-center">
-        <i class="fa-solid fa-sun text-amber-500 mr-2"></i>
-        Option 1 : Journée Complète
-      </h4>
+      <h4 class="font-bold text-gray-900 mb-4">Option 1 : Journée Complète</h4>
       {% include blog/budget-table.html items="Péage A/R|40-80 DH,Carburant A/R|150-200 DH,Parking journée|20-50 DH,Déjeuner|200-400 DH,Café/snacks|40-80 DH" total="450-810 DH pour 2 pers" %}
     </div>
 
     <div class="bg-white border border-gray-200 rounded-xl p-6">
-      <h4 class="font-bold text-gray-900 mb-4 flex items-center">
-        <i class="fa-solid fa-moon text-indigo-500 mr-2"></i>
-        Option 2 : Week-end (1 nuit)
-      </h4>
+      <h4 class="font-bold text-gray-900 mb-4">Option 2 : Week-end (1 nuit)</h4>
       {% include blog/budget-table.html items="Transport A/R|210-280 DH,Hôtel 1 nuit|600-1200 DH,Repas (2 jours)|400-800 DH,Activités|100-200 DH" total="1310-2480 DH pour 2 pers" %}
     </div>
   </div>
 </section>
 
-<!-- Conseils Pratiques -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-lightbulb" title="Conseils Pratiques" %}
+  {% include blog/section-header.html title="Conseils Pratiques" %}
 
   <div class="grid md:grid-cols-2 gap-6">
     <div class="space-y-4">
       <div class="bg-gray-50 rounded-xl p-5">
-        <h4 class="font-bold text-gray-900 mb-3 flex items-center">
-          <i class="fa-solid fa-clipboard-check text-primary mr-2"></i>
-          Avant le Départ
-        </h4>
+        <h4 class="font-bold text-gray-900 mb-3">Avant le Départ</h4>
         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
           <li>Vérifiez la météo (Essaouira est ventée)</li>
           <li>Téléchargez Maps.me (hors ligne)</li>
@@ -299,10 +271,7 @@ author: Boyacars
       </div>
 
       <div class="bg-gray-50 rounded-xl p-5">
-        <h4 class="font-bold text-gray-900 mb-3 flex items-center">
-          <i class="fa-solid fa-car text-primary mr-2"></i>
-          Sur la Route
-        </h4>
+        <h4 class="font-bold text-gray-900 mb-3">Sur la Route</h4>
         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
           <li>120 km/h sur autoroute, 100 km/h sur nationale</li>
           <li>Pauses tous les 100 km ou 1h30</li>
@@ -313,10 +282,7 @@ author: Boyacars
 
     <div class="space-y-4">
       <div class="bg-gray-50 rounded-xl p-5">
-        <h4 class="font-bold text-gray-900 mb-3 flex items-center">
-          <i class="fa-solid fa-location-dot text-primary mr-2"></i>
-          À Essaouira
-        </h4>
+        <h4 class="font-bold text-gray-900 mb-3">À Essaouira</h4>
         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
           <li>Nagez prudemment (courants forts)</li>
           <li>Négociez les prix dans les souks</li>
@@ -330,9 +296,8 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Meilleure Période -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-calendar" title="Meilleure Période pour Visiter" %}
+  {% include blog/section-header.html title="Meilleure Période pour Visiter" %}
 
   <div class="overflow-x-auto">
     <table class="w-full text-sm">
@@ -345,22 +310,22 @@ author: Boyacars
       </thead>
       <tbody class="divide-y divide-gray-200">
         <tr class="bg-green-50">
-          <td class="px-4 py-3 font-semibold"><i class="fa-solid fa-seedling text-green-600 mr-2"></i>Printemps (mars-mai)</td>
+          <td class="px-4 py-3 font-semibold">Printemps (mars-mai)</td>
           <td class="px-4 py-3">Températures douces, fleurs</td>
           <td class="px-4 py-3">Haute saison, prix élevés</td>
         </tr>
         <tr>
-          <td class="px-4 py-3 font-semibold"><i class="fa-solid fa-sun text-amber-500 mr-2"></i>Été (juin-août)</td>
+          <td class="px-4 py-3 font-semibold">Été (juin-août)</td>
           <td class="px-4 py-3">Fêtes, ambiance</td>
           <td class="px-4 py-3">Chaud (25-30°C), vent fort</td>
         </tr>
         <tr class="bg-green-50">
-          <td class="px-4 py-3 font-semibold"><i class="fa-solid fa-leaf text-orange-500 mr-2"></i>Automne (sept-nov)</td>
+          <td class="px-4 py-3 font-semibold">Automne (sept-nov)</td>
           <td class="px-4 py-3">Idéal, doux, peu de foule</td>
           <td class="px-4 py-3">Ouragan possible (rare)</td>
         </tr>
         <tr>
-          <td class="px-4 py-3 font-semibold"><i class="fa-solid fa-snowflake text-blue-500 mr-2"></i>Hiver (déc-fév)</td>
+          <td class="px-4 py-3 font-semibold">Hiver (déc-fév)</td>
           <td class="px-4 py-3">Calme, prix bas</td>
           <td class="px-4 py-3">Frais (15-18°C), pluie possible</td>
         </tr>
@@ -373,9 +338,8 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Véhicule Recommandé -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-car-side" title="Véhicule Recommandé" %}
+  {% include blog/section-header.html title="Véhicule Recommandé" %}
 
   <div class="bg-gray-50 rounded-xl p-6">
     <p class="text-gray-700 mb-4">Pour ce road trip, un véhicule économique suffit :</p>
@@ -399,9 +363,8 @@ author: Boyacars
   </div>
 </section>
 
-<!-- En Cas de Problème -->
 <section class="mb-12">
-  {% include blog/section-header.html icon="fa-phone" title="En Cas de Problème" %}
+  {% include blog/section-header.html title="En Cas de Problème" %}
 
   <div class="bg-red-50 border border-red-200 rounded-xl p-6">
     <h4 class="font-bold text-gray-900 mb-4">Assistance Boyacars : +212 662 825 804 (WhatsApp, 24/7)</h4>
@@ -427,15 +390,14 @@ author: Boyacars
   </div>
 </section>
 
-<!-- Conclusion -->
 <section class="mb-8">
   <div class="bg-gray-900 text-white rounded-2xl p-8 text-center">
     <h2 class="text-2xl font-display font-bold mb-4">Pour un Week-end Inoubliable</h2>
     <ul class="text-gray-300 mb-6 space-y-2 text-left max-w-md mx-auto">
-      <li class="flex items-start"><span class="text-primary mr-2">&#10003;</span>Départ tôt le matin (8h)</li>
-      <li class="flex items-start"><span class="text-primary mr-2">&#10003;</span>Journée complète à Essaouira</li>
-      <li class="flex items-start"><span class="text-primary mr-2">&#10003;</span>Retour en fin d'après-midi (17h)</li>
-      <li class="flex items-start"><span class="text-primary mr-2">&#10003;</span>Ou nuit sur place pour le coucher de soleil</li>
+      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Départ tôt le matin (8h)</li>
+      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Journée complète à Essaouira</li>
+      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Retour en fin d'après-midi (17h)</li>
+      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Ou nuit sur place pour le coucher de soleil</li>
     </ul>
     <a href="https://wa.me/212662825804" target="_blank" class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
       <i class="fa-brands fa-whatsapp text-xl mr-2"></i>

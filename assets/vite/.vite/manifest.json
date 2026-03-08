@@ -24,12 +24,12 @@
     "src": "../node_modules/@fortawesome/fontawesome-pro/webfonts/fa-thin-100.woff2"
   },
   "entrypoints/application.js": {
-    "file": "main-uIGxjEpI.js",
+    "file": "main-YzGV7wD-.js",
     "name": "main",
     "src": "entrypoints/application.js",
     "isEntry": true,
     "css": [
-      "main-CbtrWfn1.css"
+      "main-CKvXqplv.css"
     ],
     "assets": [
       "fa-brands-400-Co6qPm93.woff2",

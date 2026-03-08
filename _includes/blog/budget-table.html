@@ -16,13 +16,10 @@
 {% endcomment %}
 {% assign currency = include.currency | default: "MAD" %}
 
-<div class="bg-gray-50 rounded-xl overflow-hidden">
+<div class="bg-gray-50 rounded-lg overflow-hidden">
   {% if include.title %}
   <div class="bg-gray-100 px-4 py-3 border-b border-gray-200">
-    <h4 class="font-semibold text-gray-900 flex items-center">
-      <i class="fa-solid fa-coins text-primary mr-2"></i>
-      {{ include.title }}
-    </h4>
+    <h4 class="font-semibold text-gray-900">{{ include.title }}</h4>
   </div>
   {% endif %}
 
@@ -39,7 +36,7 @@
     {% if include.total %}
     <div class="px-4 py-3 flex justify-between items-center bg-primary/5">
       <span class="font-semibold text-gray-900">Total estimé</span>
-      <span class="font-bold text-primary text-lg">{{ include.total }}</span>
+      <span class="font-bold text-primary">{{ include.total }}</span>
     </div>
     {% endif %}
   </div>
