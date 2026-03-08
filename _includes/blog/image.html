@@ -1,0 +1,30 @@
+{% comment %}
+  Blog Image Component
+
+  Usage:
+  {% include blog/image.html
+     src="/assets/images/blog/essaouira-port.jpg"
+     alt="Port d'Essaouira"
+     caption="Les bateaux bleus du port"
+  %}
+
+  Parameters:
+    src: Image path (required)
+    alt: Alt text for accessibility (required)
+    caption: Optional caption below the image
+    class: Optional additional CSS classes
+{% endcomment %}
+
+<figure class="my-8 {{ include.class }}">
+  <img
+    src="{{ include.src }}"
+    alt="{{ include.alt }}"
+    class="w-full rounded-xl shadow-lg"
+    loading="lazy"
+  >
+  {% if include.caption %}
+  <figcaption class="text-center text-sm text-gray-500 mt-3 italic">
+    {{ include.caption }}
+  </figcaption>
+  {% endif %}
+</figure>
