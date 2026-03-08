@@ -1,0 +1,42 @@
+{% comment %}
+  Tip Box Component for Tips and Advice
+
+  Usage: {% include blog/tip-box.html text="Partez tôt le matin pour éviter la chaleur." %}
+
+  Parameters:
+    text: The tip text
+    title: Optional title (defaults to "Conseil")
+    type: Optional type - "tip" (default), "warning", "info"
+{% endcomment %}
+{% assign box_type = include.type | default: "tip" %}
+{% assign box_title = include.title | default: "Conseil" %}
+
+{% if box_type == "warning" %}
+  {% assign bg_color = "bg-amber-50" %}
+  {% assign border_color = "border-amber-200" %}
+  {% assign icon_bg = "bg-amber-100" %}
+  {% assign icon_color = "text-amber-600" %}
+  {% assign icon = "fa-triangle-exclamation" %}
+{% elsif box_type == "info" %}
+  {% assign bg_color = "bg-blue-50" %}
+  {% assign border_color = "border-blue-200" %}
+  {% assign icon_bg = "bg-blue-100" %}
+  {% assign icon_color = "text-blue-600" %}
+  {% assign icon = "fa-circle-info" %}
+{% else %}
+  {% assign bg_color = "bg-primary/5" %}
+  {% assign border_color = "border-primary/20" %}
+  {% assign icon_bg = "bg-primary/10" %}
+  {% assign icon_color = "text-primary" %}
+  {% assign icon = "fa-lightbulb" %}
+{% endif %}
+
+<div class="{{ bg_color }} border {{ border_color }} rounded-xl p-4 flex items-start space-x-3">
+  <span class="w-8 h-8 {{ icon_bg }} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+    <i class="fa-solid {{ icon }} {{ icon_color }}"></i>
+  </span>
+  <div>
+    <p class="font-semibold text-gray-900 text-sm mb-1">{{ box_title }}</p>
+    <p class="text-gray-700 text-sm">{{ include.text }}</p>
+  </div>
+</div>

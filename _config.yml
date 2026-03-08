@@ -15,6 +15,9 @@ collections:
   vehicles:
     output: true
     permalink: /voiture/:slug/
+  blog:
+    output: true
+    permalink: /blog/:slug/
 
 # Defaults
 defaults:
@@ -23,6 +26,11 @@ defaults:
       type: "vehicles"
     values:
       layout: "vehicle"
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "post"
 
 # Include pages directory
 include:

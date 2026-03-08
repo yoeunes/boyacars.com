@@ -1,0 +1,19 @@
+{% comment %}
+  Info Card Component for Practical Information
+
+  Usage: {% include blog/info-card.html icon="fa-road" label="Distance" value="180 km" %}
+
+  Parameters:
+    icon: Font Awesome icon class
+    label: Label text
+    value: Value text
+{% endcomment %}
+<div class="bg-gray-50 rounded-xl p-4 flex items-center space-x-3">
+  <span class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
+    <i class="fa-solid {{ include.icon }} text-primary"></i>
+  </span>
+  <div>
+    <p class="text-sm text-gray-500">{{ include.label }}</p>
+    <p class="font-semibold text-gray-900">{{ include.value }}</p>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{% comment %}
+  Section Header Component for Blog Posts
+
+  Usage: {% include blog/section-header.html icon="fa-map-pin" title="Informations Pratiques" %}
+
+  Parameters:
+    icon: Font Awesome icon class (e.g., "fa-map-pin", "fa-clock")
+    title: Section title text
+{% endcomment %}
+<h3 class="flex items-center text-xl font-bold text-gray-900 mb-4">
+  <span class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mr-3">
+    <i class="fa-solid {{ include.icon }} text-primary"></i>
+  </span>
+  {{ include.title }}
+</h3>
