@@ -1,0 +1,64 @@
+<!-- Vehicle Filters -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div class="flex flex-col sm:flex-row gap-4 flex-1">
+      <!-- Fuel Filter -->
+      <div class="flex-1">
+        <label for="fuel-filter" class="block text-sm font-medium text-gray-700 mb-1">Carburant</label>
+        <select
+          id="fuel-filter"
+          data-vehicle-filter-target="fuelFilter"
+          data-action="change->vehicle-filter#filter"
+          class="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary py-2 px-3">
+          <option value="">Tous</option>
+          <option value="diesel">Diesel</option>
+          <option value="essence">Essence</option>
+        </select>
+      </div>
+
+      <!-- Transmission Filter -->
+      <div class="flex-1">
+        <label for="transmission-filter" class="block text-sm font-medium text-gray-700 mb-1">Transmission</label>
+        <select
+          id="transmission-filter"
+          data-vehicle-filter-target="transmissionFilter"
+          data-action="change->vehicle-filter#filter"
+          class="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary py-2 px-3">
+          <option value="">Toutes</option>
+          <option value="automatique">Automatique</option>
+          <option value="manuelle">Manuelle</option>
+        </select>
+      </div>
+
+      <!-- Price Filter -->
+      <div class="flex-1">
+        <label for="price-filter" class="block text-sm font-medium text-gray-700 mb-1">Prix max/jour</label>
+        <select
+          id="price-filter"
+          data-vehicle-filter-target="priceFilter"
+          data-action="change->vehicle-filter#filter"
+          class="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary py-2 px-3">
+          <option value="">Tous les prix</option>
+          <option value="300">Jusqu'à 300 DH</option>
+          <option value="500">Jusqu'à 500 DH</option>
+          <option value="800">Jusqu'à 800 DH</option>
+          <option value="1000">Jusqu'à 1000 DH</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Reset & Count -->
+    <div class="flex items-end gap-4">
+      <button
+        type="button"
+        data-action="click->vehicle-filter#reset"
+        class="px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">
+        <i class="fa-solid fa-rotate-right mr-1"></i>
+        Réinitialiser
+      </button>
+      <div class="bg-primary/10 text-primary font-semibold px-4 py-2 rounded-lg">
+        <span data-vehicle-filter-target="count">0 véhicules trouvés</span>
+      </div>
+    </div>
+  </div>
+</div>

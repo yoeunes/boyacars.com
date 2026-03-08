@@ -1,23 +1,6 @@
 {% assign isHome = page.layout == 'home' %}
 
 <header class="{% if isHome %}header_main{% endif %}">
-  <!-- Top bar -->
-  <div class="hidden md:block bg-gray-800 text-white shadow">
-    <div class="container mx-auto py-1 flex justify-between items-center">
-      <div class="flex items-center justify-between text-sm">
-        <a class="px-2 hover:text-primary transition-colors" href="mailto:{{ site.data.site.contact.email }}" title="Email de support">
-          <i class="fa-solid fa-envelope text-primary"></i> {{ site.data.site.contact.email_display }}
-        </a>
-        <span class="px-2">
-          <i class="fa-solid fa-clock text-primary"></i> 24h/7j
-        </span>
-        <span class="px-2">
-          <i class="fa-solid fa-map-marker-alt text-primary"></i> {{ site.data.site.contact.address }}
-        </span>
-      </div>
-    </div>
-  </div>
-
   <!-- Main nav -->
   <div class="{% if isHome %}absolute text-white{% endif %} container mx-auto left-0 right-0 flex justify-between items-center mt-2 px-4 py-4 z-10">
     <a href="/">
@@ -27,17 +10,6 @@
         <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-16">
       {% endif %}
     </a>
-
-    <!-- Phone -->
-    <div class="hidden md:flex ml-8 justify-center items-center">
-      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}" title="Numéro de téléphone de Boyacars" class="flex justify-between items-center border-l-4 border-white pl-8">
-        <i class="fa-solid fa-phone text-2xl text-primary mr-2 animate-bounce"></i>
-        <div class="ml-2 flex flex-col text-xs animate-pulse">
-          <span>Appelez-nous pour de l'aide</span>
-          <span class="font-semibold">{{ site.data.site.contact.phone }}</span>
-        </div>
-      </a>
-    </div>
 
     <!-- Mobile menu button -->
     <div class="lg:hidden" data-controller="slidebar">
@@ -57,6 +29,14 @@
           </li>
         {% endfor %}
       </ul>
+      <!-- WhatsApp CTA in header -->
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="ml-6 inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
+        <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+        <span>Réserver</span>
+      </a>
     </nav>
   </div>
 </header>
@@ -77,9 +57,12 @@
       </ul>
     </nav>
     <div class="mt-8 pt-8 border-t border-gray-200">
-      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}" class="flex items-center text-primary">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="flex items-center justify-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-3 px-4 rounded-full transition-colors">
         <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
-        <span class="font-semibold">{{ site.data.site.contact.phone }}</span>
+        <span>Réserver sur WhatsApp</span>
       </a>
     </div>
   </div>

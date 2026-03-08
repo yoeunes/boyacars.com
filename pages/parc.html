@@ -7,16 +7,30 @@ description: Découvrez notre parc automobile à Marrakech. Large choix de véhi
 
 {% include components/page-header.html title="Parc automobile" %}
 
-<div class="container mx-auto mt-16 px-4">
+<div class="container mx-auto mt-16 px-4" data-controller="vehicle-filter">
   <div class="text-center mb-12">
     <h2 class="text-3xl font-bold text-gray-800 mb-4">Nos véhicules disponibles</h2>
     <p class="text-gray-600">Choisissez parmi notre sélection de voitures de qualité</p>
   </div>
+
+  {% include components/vehicle-filters.html %}
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
     {% assign vehicles = site.vehicles | where: "published", true %}
     {% for vehicle in vehicles %}
       {% include components/vehicle-card.html vehicle=vehicle %}
     {% endfor %}
+  </div>
+
+  <!-- Empty state -->
+  <div class="hidden text-center py-12" id="no-results">
+    <i class="fa-solid fa-car text-6xl text-gray-300 mb-4"></i>
+    <p class="text-gray-500 text-lg">Aucun véhicule ne correspond à vos critères.</p>
+    <button
+      type="button"
+      data-action="click->vehicle-filter#reset"
+      class="mt-4 text-primary hover:underline font-medium">
+      Réinitialiser les filtres
+    </button>
   </div>
 </div>

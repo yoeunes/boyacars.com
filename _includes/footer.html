@@ -10,10 +10,6 @@
         <p class="mt-2">{{ site.data.footer.description }}</p>
         <div class="mt-4 space-y-2">
           <div class="flex items-center">
-            <i class="fa-solid fa-map-marker-alt text-primary mr-2"></i>
-            <span>{{ site.data.site.contact.address }}</span>
-          </div>
-          <div class="flex items-center">
             <i class="fa-solid fa-envelope text-primary mr-2"></i>
             <a href="mailto:{{ site.data.site.contact.email }}" class="text-white hover:underline">{{ site.data.site.contact.email_display }}</a>
           </div>
@@ -75,17 +71,15 @@
       </div>
     </div>
 
-    <!-- Social links -->
-    <div class="mt-10 flex justify-center space-x-4">
-      {% for social in site.data.site.social %}
-        <a href="{{ social.url }}"
-           class="rounded-full bg-primary hover:bg-primary-dark inline-flex w-10 h-10 items-center justify-center transition-colors duration-200 ease-in-out"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="{{ social.name }}">
-          <i class="{{ social.icon }}"></i>
-        </a>
-      {% endfor %}
+    <!-- WhatsApp CTA -->
+    <div class="mt-10 flex justify-center">
+      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+        <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
+        <span>Réserver maintenant sur WhatsApp</span>
+      </a>
     </div>
 
     <p class="text-center mt-10 text-sm">
