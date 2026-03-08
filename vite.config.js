@@ -13,9 +13,9 @@ export default defineConfig({
         main: resolve(__dirname, 'frontend/entrypoints/application.js'),
       },
       output: {
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]',
+        entryFileNames: '[name]-[hash].js',
+        chunkFileNames: '[name]-[hash].js',
+        assetFileNames: '[name]-[hash].[ext]',
       },
     },
   },
