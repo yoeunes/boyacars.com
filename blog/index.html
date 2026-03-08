@@ -1,0 +1,101 @@
+---
+layout: default
+title: Blog & Guides
+permalink: /blog/
+description: Découvrez nos guides pratiques et conseils pour la location de voiture à Marrakech. Itinéraires, excursions, conseils de conduite et astuces pour votre séjour au Maroc.
+---
+
+<!-- Hero Section -->
+<section class="relative bg-gray-900 py-20">
+  <div class="absolute inset-0 bg-gradient-to-b from-gray-900/95 to-gray-900"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-flex items-center bg-primary/20 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+      <i class="fa-solid fa-book-open mr-2"></i>
+      Blog & Guides
+    </span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+      Guides de Voyage & Conseils
+    </h1>
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+      Tout ce que vous devez savoir pour préparer votre séjour à Marrakech et explorer le Maroc en voiture.
+    </p>
+  </div>
+</section>
+
+<!-- Blog Posts Grid -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for post in site.posts %}
+        <article class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-gold transition-all duration-300">
+          <!-- Image -->
+          {% if post.image %}
+          <div class="aspect-video overflow-hidden">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          {% else %}
+          <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+            <i class="fa-solid fa-car text-6xl text-gray-300"></i>
+          </div>
+          {% endif %}
+
+          <!-- Content -->
+          <div class="p-6">
+            <!-- Date -->
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <i class="fa-solid fa-calendar mr-2"></i>
+              {{ post.date | date: "%d %B %Y" }}
+            </div>
+
+            <!-- Title -->
+            <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h2>
+
+            <!-- Excerpt -->
+            {% if post.description %}
+            <p class="text-gray-600 mb-4 line-clamp-3">
+              {{ post.description }}
+            </p>
+            {% endif %}
+
+            <!-- Read More -->
+            <a href="{{ post.url }}" class="inline-flex items-center text-primary hover:text-primary-dark font-semibold transition-colors group">
+              Lire l'article
+              <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size == 0 %}
+    <div class="text-center py-16">
+      <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fa-solid fa-newspaper text-4xl text-gray-400"></i>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-2">Aucun article pour le moment</h3>
+      <p class="text-gray-500">Les articles arrivent bientôt !</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">
+      Besoin d'aide pour planifier votre voyage ?
+    </h2>
+    <p class="text-gray-600 mb-8">
+      Notre équipe est disponible 24/7 pour répondre à vos questions et vous conseiller sur votre location.
+    </p>
+    <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:shadow-lg">
+      <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
+      Nous contacter
+    </a>
+  </div>
+</section>
