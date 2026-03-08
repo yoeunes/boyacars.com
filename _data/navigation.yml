@@ -3,5 +3,7 @@ main:
     url: "/"
   - title: "Parc auto"
     url: "/parc/"
+  - title: "Blog"
+    url: "/blog/"
   - title: "Contactez-nous"
     url: "/contact/"

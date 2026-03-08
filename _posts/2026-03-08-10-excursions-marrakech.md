@@ -3,7 +3,7 @@ layout: post
 title: 10 Excursions Immanquables au Départ de Marrakech en Voiture
 date: 2026-03-08
 description: Découvrez les 10 plus belles excursions accessibles en voiture depuis Marrakech. Itinéraires détaillés, distances, temps de trajet et conseils pratiques pour explorer la région.
-image: https://images.unsplash.com/photo-1489710157962-58d31d1ac88?w=1200&h=630&fit=crop
+image: /assets/images/blog/excursions-marrakech.jpg
 categories: [Excursions]
 tags: [excursions, marrakech, road trip, maroc]
 author: Boyacars

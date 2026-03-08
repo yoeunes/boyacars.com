@@ -3,7 +3,7 @@ layout: post
 title: Quand Visiter Marrakech en Voiture - Guide Saisonnier 2026
 date: 2026-03-08
 description: Découvrez la meilleure période pour visiter Marrakech en voiture en 2026. Guide complet par saison : météo, événements, conseils pratiques et véhicule adapté.
-image: https://images.unsplash.com/photo-1561068129-4293-8bca-21e9-abe7f661e032?w=1200&h=630&fit=crop
+image: /assets/images/blog/saisons-marrakech.jpg
 categories: [Guides]
 tags: [quand visiter, marrakech, saisons, météo]
 author: Boyacars

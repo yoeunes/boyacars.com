@@ -4,7 +4,7 @@ title: Conduire au Maroc - Guide Pratique et Conseils Sécu
 title: Conduire au Maroc en 2026 - Guide Complet et Conseils Pratiques
 date: 2026-03-08
 description: Tout ce qu'il faut savoir pour conduire au Maroc : règles de circulation, état des routes, limitations de vitesse, péages, stations-service et conseils de sécurité.
-image: https://images.unsplash.com/photo-1449965408869-eaa3f7f8a4be?w=1200&h=630&fit=crop
+image: /assets/images/blog/conduire-maroc.jpg
 categories: [Conseils]
 tags: [conduire, maroc, règles de circulation, sécurité]
 author: Boyacars

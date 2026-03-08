@@ -3,7 +3,7 @@ layout: post
 title: Guide Complet de la Location de Voiture à Marrakech 2026
 date: 2026-03-08
 description: Tout ce que vous devez savoir pour louer une voiture à Marrakech en 2026. Documents nécessaires, prix, assurances, conseils pratiques et astuces pour économiser.
-image: https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1200&h=630&fit=crop
+image: /assets/images/blog/guide-location-voiture.jpg
 categories: [Guides]
 tags: [location voiture, marrakech, maroc, guide 2026]
 author: Boyacars

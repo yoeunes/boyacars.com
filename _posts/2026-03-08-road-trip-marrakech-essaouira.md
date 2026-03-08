@@ -3,7 +3,7 @@ layout: post
 title: Road Trip Marrakech-Essaouira - Le Guide Complet 2026
 date: 2026-03-08
 description: Planifiez votre road trip de Marrakech à Essaouira. Itinéraire détaillé, étapes, conseils pratiques et budget pour l'une des plus belles routes côtières du Maroc.
-image: https://images.unsplash.com/photo-1559128010-7c1ad991a25b?w=1200&h=630&fit=crop
+image: /assets/images/blog/road-trip-essaouira.jpg
 categories: [Road Trips]
 tags: [essaouira, road trip, marrakech, atlantique]
 author: Boyacars
