@@ -15,7 +15,7 @@ author: Younes ENNAJI
 </p>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Règles de Circulation Fondamentales" %}
+  {% include blog/section-header.html title="Règles de Circulation Fondamentales" icon="fa-duotone fa-traffic-light" %}
 
   <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
     <h4 class="font-bold text-gray-900 mb-3">Conduite à Droite</h4>
@@ -95,7 +95,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="État des Routes" %}
+  {% include blog/section-header.html title="État des Routes" icon="fa-duotone fa-road" %}
 
   <div class="space-y-4">
     <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
@@ -171,7 +171,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Stations-Service et Carburant" %}
+  {% include blog/section-header.html title="Stations-Service et Carburant" icon="fa-duotone fa-gas-pump" %}
 
   <div class="overflow-x-auto mb-6">
     <table class="w-full text-sm">
@@ -226,7 +226,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Péages (Autoroutes)" %}
+  {% include blog/section-header.html title="Péages (Autoroutes)" icon="fa-duotone fa-coins" %}
 
   <div class="overflow-x-auto mb-6">
     <table class="w-full text-sm">
@@ -268,33 +268,41 @@ author: Younes ENNAJI
   </div>
 </section>
 
-<section class="mb-12">
-  {% include blog/section-header.html title="Numéros d'Urgence" %}
+<section class="mb-12" data-controller="blog-emergency">
+  {% include blog/section-header.html title="Numéros d'Urgence" icon="fa-duotone fa-phone-flip" %}
 
   <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
-      <i class="fa-duotone fa-shield-halved text-gray-500 text-xl mb-2"></i>
+    <div class="bg-white border border-gray-100 rounded-xl p-5 text-center shadow-premium">
+      <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3" data-blog-emergency-target="icon">
+        <i class="fa-duotone fa-shield-halved text-primary text-xl"></i>
+      </div>
       <p class="font-bold text-gray-900">Police</p>
       <p class="text-primary text-2xl font-bold">117</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
 
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
-      <i class="fa-duotone fa-fire-extinguisher text-gray-500 text-xl mb-2"></i>
+    <div class="bg-white border border-gray-100 rounded-xl p-5 text-center shadow-premium">
+      <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3" data-blog-emergency-target="icon">
+        <i class="fa-duotone fa-fire-extinguisher text-primary text-xl"></i>
+      </div>
       <p class="font-bold text-gray-900">Pompiers</p>
       <p class="text-primary text-2xl font-bold">15</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
 
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
-      <i class="fa-duotone fa-hospital text-gray-500 text-xl mb-2"></i>
+    <div class="bg-white border border-gray-100 rounded-xl p-5 text-center shadow-premium">
+      <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3" data-blog-emergency-target="icon">
+        <i class="fa-duotone fa-hospital text-primary text-xl"></i>
+      </div>
       <p class="font-bold text-gray-900">SAMU</p>
       <p class="text-primary text-2xl font-bold">141</p>
       <p class="text-xs text-gray-500">24/7</p>
     </div>
 
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
-      <i class="fa-duotone fa-phone-rotary text-gray-500 text-xl mb-2"></i>
+    <div class="bg-white border border-gray-100 rounded-xl p-5 text-center shadow-premium">
+      <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3" data-blog-emergency-target="icon">
+        <i class="fa-duotone fa-phone-flip text-primary text-xl"></i>
+      </div>
       <p class="font-bold text-gray-900">Boyacars</p>
       <p class="text-primary text-lg font-bold">+212 662 825 804</p>
       <p class="text-xs text-gray-500">24/7</p>
@@ -314,7 +322,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Stationnement" %}
+  {% include blog/section-header.html title="Stationnement" icon="fa-duotone fa-square-parking" %}
 
   <div class="grid md:grid-cols-2 gap-6">
     <div class="bg-gray-50 rounded-xl p-6">
@@ -343,7 +351,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Conduite par Conditions Particulières" %}
+  {% include blog/section-header.html title="Conduite par Conditions Particulières" icon="fa-duotone fa-cloud-sun" %}
 
   <div class="grid md:grid-cols-2 gap-4">
     <div class="bg-gray-900 text-white rounded-xl p-6">
@@ -389,7 +397,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="En Cas de Panne" %}
+  {% include blog/section-header.html title="En Cas de Panne" icon="fa-duotone fa-triangle-exclamation" %}
 
   <div class="grid md:grid-cols-2 gap-6">
     <div class="bg-gray-50 rounded-xl p-6">
@@ -420,7 +428,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Checklist Avant Départ" %}
+  {% include blog/section-header.html title="Checklist Avant Départ" icon="fa-duotone fa-clipboard-list-check" %}
 
   <div class="grid md:grid-cols-3 gap-6">
     <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -465,19 +473,19 @@ author: Younes ENNAJI
     <h2 class="text-2xl font-display font-bold mb-4 text-center">Points Clés à Retenir</h2>
     <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-6">
       <div class="flex items-start">
-        <span class="text-primary mr-2 mt-1">✓</span>
+        <i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>
         <span class="text-gray-300">Conduite à droite, limitations strictes</span>
       </div>
       <div class="flex items-start">
-        <span class="text-primary mr-2 mt-1">✓</span>
+        <i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>
         <span class="text-gray-300">Prudence sur routes secondaires</span>
       </div>
       <div class="flex items-start">
-        <span class="text-primary mr-2 mt-1">✓</span>
+        <i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>
         <span class="text-gray-300">Prévoyez de l'argent liquide</span>
       </div>
       <div class="flex items-start">
-        <span class="text-primary mr-2 mt-1">✓</span>
+        <i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>
         <span class="text-gray-300">Évitez la conduite nocturne</span>
       </div>
     </div>

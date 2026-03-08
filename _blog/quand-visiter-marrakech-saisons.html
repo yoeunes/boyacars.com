@@ -17,7 +17,7 @@ author: Younes ENNAJI
 {% include blog/image.html src="/assets/images/blog/marrakech-medina.jpg" alt="Porte traditionnelle de la médina de Marrakech" caption="Les portes historiques de la médina de Marrakech" %}
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Vue d'Ensemble Climatique" %}
+  {% include blog/section-header.html title="Vue d'Ensemble Climatique" icon="fa-duotone fa-temperature-half" %}
 
   <div class="overflow-x-auto">
     <table class="w-full text-sm">
@@ -120,10 +120,15 @@ author: Younes ENNAJI
   </div>
 </section>
 
-<section class="mb-12">
-  <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+<section class="mb-12" data-controller="blog-weather">
+  <div class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-premium">
     <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
-      <h2 class="text-2xl font-display font-bold text-gray-900">Printemps (Mars-Mai)</h2>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center" data-blog-weather-target="flower">
+          <i class="fa-duotone fa-flower-tulip text-primary text-xl"></i>
+        </div>
+        <h2 class="text-2xl font-display font-bold text-gray-900">Printemps (Mars-Mai)</h2>
+      </div>
       <span class="px-3 py-1 bg-gray-900 text-white text-sm font-bold rounded-full">IDEAL</span>
     </div>
 
@@ -171,11 +176,16 @@ author: Younes ENNAJI
   </div>
 </section>
 
-<section class="mb-12">
-  <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+<section class="mb-12" data-controller="blog-weather">
+  <div class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-premium">
     <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
-      <h2 class="text-2xl font-display font-bold text-gray-900">Été (Juin-Août)</h2>
-      <span class="px-3 py-1 bg-gray-500 text-white text-sm font-bold rounded-full">CHAUD</span>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center" data-blog-weather-target="sun">
+          <i class="fa-duotone fa-sun text-amber-500 text-xl"></i>
+        </div>
+        <h2 class="text-2xl font-display font-bold text-gray-900">Été (Juin-Août)</h2>
+      </div>
+      <span class="px-3 py-1 bg-amber-500 text-white text-sm font-bold rounded-full">CHAUD</span>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -230,10 +240,15 @@ author: Younes ENNAJI
   </div>
 </section>
 
-<section class="mb-12">
-  <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+<section class="mb-12" data-controller="blog-weather">
+  <div class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-premium">
     <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
-      <h2 class="text-2xl font-display font-bold text-gray-900">Automne (Sept-Nov)</h2>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center" data-blog-weather-target="leaf">
+          <i class="fa-duotone fa-leaf text-orange-500 text-xl"></i>
+        </div>
+        <h2 class="text-2xl font-display font-bold text-gray-900">Automne (Sept-Nov)</h2>
+      </div>
       <span class="px-3 py-1 bg-gray-900 text-white text-sm font-bold rounded-full">EXCELLENT</span>
     </div>
 
@@ -284,11 +299,16 @@ author: Younes ENNAJI
   </div>
 </section>
 
-<section class="mb-12">
-  <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+<section class="mb-12" data-controller="blog-weather">
+  <div class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-premium">
     <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
-      <h2 class="text-2xl font-display font-bold text-gray-900">Hiver (Déc-Fév)</h2>
-      <span class="px-3 py-1 bg-gray-500 text-white text-sm font-bold rounded-full">FRAIS</span>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center" data-blog-weather-target="snow">
+          <i class="fa-duotone fa-snowflake text-blue-500 text-xl"></i>
+        </div>
+        <h2 class="text-2xl font-display font-bold text-gray-900">Hiver (Déc-Fév)</h2>
+      </div>
+      <span class="px-3 py-1 bg-blue-500 text-white text-sm font-bold rounded-full">FRAIS</span>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -342,7 +362,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Comparatif Saisonnier" %}
+  {% include blog/section-header.html title="Comparatif Saisonnier" icon="fa-duotone fa-chart-bar" %}
 
   <div class="overflow-x-auto">
     <table class="w-full text-sm">
@@ -390,7 +410,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Quel Véhicule Choisir par Saison ?" %}
+  {% include blog/section-header.html title="Quel Véhicule Choisir par Saison ?" icon="fa-duotone fa-car-side" %}
 
   <div class="grid md:grid-cols-2 gap-4">
     <div class="bg-gray-50 rounded-xl p-5">
@@ -421,7 +441,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Conseils Généraux" %}
+  {% include blog/section-header.html title="Conseils Généraux" icon="fa-duotone fa-lightbulb" %}
 
   <div class="grid md:grid-cols-3 gap-4">
     <div class="bg-gray-50 rounded-xl p-5">

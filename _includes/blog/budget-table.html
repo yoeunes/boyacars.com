@@ -16,25 +16,28 @@
 {% endcomment %}
 {% assign currency = include.currency | default: "MAD" %}
 
-<div class="bg-gray-50 rounded-lg overflow-hidden">
+<div class="bg-white border border-gray-100 rounded-2xl shadow-premium overflow-hidden">
   {% if include.title %}
-  <div class="bg-gray-100 px-4 py-3 border-b border-gray-200">
+  <div class="bg-gray-50 px-5 py-4 border-b border-gray-100 flex items-center gap-3">
+    <div class="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+      <i class="fa-duotone fa-coins text-primary text-base"></i>
+    </div>
     <h4 class="font-semibold text-gray-900">{{ include.title }}</h4>
   </div>
   {% endif %}
 
-  <div class="divide-y divide-gray-200">
+  <div class="divide-y divide-gray-100">
     {% assign items = include.items | split: "," %}
     {% for item in items %}
       {% assign parts = item | split: "|" %}
-      <div class="px-4 py-3 flex justify-between items-center">
-        <span class="text-gray-700">{{ parts[0] }}</span>
-        <span class="font-semibold text-gray-900">{{ parts[1] }}</span>
+      <div class="px-5 py-3.5 flex justify-between items-center">
+        <span class="text-gray-600 text-sm">{{ parts[0] }}</span>
+        <span class="font-semibold text-gray-900 text-sm">{{ parts[1] }}</span>
       </div>
     {% endfor %}
 
     {% if include.total %}
-    <div class="px-4 py-3 flex justify-between items-center bg-gray-100">
+    <div class="px-5 py-4 flex justify-between items-center bg-primary/5">
       <span class="font-semibold text-gray-900">Total estimé</span>
       <span class="font-bold text-primary">{{ include.total }}</span>
     </div>

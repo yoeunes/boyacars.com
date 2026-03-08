@@ -2,10 +2,24 @@
   Section Header Component for Blog Posts
 
   Usage: {% include blog/section-header.html title="Informations Pratiques" %}
+         {% include blog/section-header.html title="Informations Pratiques" icon="fa-duotone fa-circle-info" %}
+         {% include blog/section-header.html title="Informations Pratiques" subtitle="Tout ce qu'il faut savoir" %}
 
   Parameters:
     title: Section title text
+    icon: Optional FontAwesome icon class (e.g., "fa-duotone fa-circle-info")
+    subtitle: Optional subtitle text
 {% endcomment %}
-<h3 class="text-lg font-bold text-gray-900 mb-4 pl-4 border-l-4 border-primary">
-  {{ include.title }}
-</h3>
+<div class="flex items-start gap-4 mb-6">
+  {% if include.icon %}
+  <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+    <i class="{{ include.icon }} text-primary text-lg"></i>
+  </div>
+  {% endif %}
+  <div class="flex-1 min-w-0 {% unless include.icon %}pl-4 border-l-4 border-primary{% endunless %}">
+    <h3 class="text-lg font-bold text-gray-900">{{ include.title }}</h3>
+    {% if include.subtitle %}
+    <p class="text-sm text-gray-500 mt-1">{{ include.subtitle }}</p>
+    {% endif %}
+  </div>
+</div>

@@ -2,12 +2,26 @@
   Info Card Component for Practical Information
 
   Usage: {% include blog/info-card.html label="Distance" value="180 km" %}
+         {% include blog/info-card.html label="Distance" value="180 km" icon="fa-duotone fa-route" %}
 
   Parameters:
     label: Label text
     value: Value text
+    icon: Optional FontAwesome icon class (e.g., "fa-duotone fa-route")
 {% endcomment %}
-<div class="bg-gray-50 rounded-lg p-4">
-  <p class="text-sm text-gray-500 mb-1">{{ include.label }}</p>
+<div class="bg-white border border-gray-100 rounded-xl p-4 shadow-premium hover:shadow-premium-lg transition-shadow duration-300">
+  {% if include.icon %}
+  <div class="flex items-center gap-3">
+    <div class="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+      <i class="{{ include.icon }} text-primary text-base"></i>
+    </div>
+    <div class="min-w-0">
+      <p class="text-xs text-gray-500 mb-0.5">{{ include.label }}</p>
+      <p class="font-semibold text-gray-900 text-sm">{{ include.value }}</p>
+    </div>
+  </div>
+  {% else %}
+  <p class="text-xs text-gray-500 mb-1">{{ include.label }}</p>
   <p class="font-semibold text-gray-900">{{ include.value }}</p>
+  {% endif %}
 </div>

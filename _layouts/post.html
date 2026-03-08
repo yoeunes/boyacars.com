@@ -30,12 +30,12 @@ layout: default
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="flex items-center text-sm text-white/80" aria-label="Breadcrumb">
           <a href="{{ '/' | relative_url }}" class="hover:text-white transition-colors">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-duotone fa-house"></i>
           </a>
-          <i class="fa-solid fa-chevron-right mx-3 text-xs text-white/50"></i>
+          <i class="fa-duotone fa-chevron-right mx-3 text-xs text-white/50"></i>
           <a href="{{ '/blog/' | relative_url }}" class="hover:text-white transition-colors">Blog</a>
           {% if page.categories.first %}
-          <i class="fa-solid fa-chevron-right mx-3 text-xs text-white/50"></i>
+          <i class="fa-duotone fa-chevron-right mx-3 text-xs text-white/50"></i>
           <span class="text-white/60">{{ page.categories.first }}</span>
           {% endif %}
         </nav>
@@ -55,18 +55,18 @@ layout: default
         </h1>
         <div class="flex flex-wrap items-center gap-4 text-white/80 text-sm">
           <span class="flex items-center">
-            <i class="fa-solid fa-calendar mr-2 text-primary"></i>
+            <i class="fa-duotone fa-calendar-days mr-2 text-primary"></i>
             <time datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">
               {% include date_fr.html date=page.date %}
             </time>
           </span>
           <span class="flex items-center">
-            <i class="fa-solid fa-clock mr-2 text-primary"></i>
+            <i class="fa-duotone fa-clock mr-2 text-primary"></i>
             {{ reading_time }} min de lecture
           </span>
           {% if page.author %}
           <span class="flex items-center">
-            <i class="fa-solid fa-user mr-2 text-primary"></i>
+            <i class="fa-duotone fa-user mr-2 text-primary"></i>
             <span itemprop="author">{{ page.author }}</span>
           </span>
           {% endif %}
@@ -84,12 +84,12 @@ layout: default
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="flex items-center text-sm text-white/80" aria-label="Breadcrumb">
           <a href="{{ '/' | relative_url }}" class="hover:text-white transition-colors">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-duotone fa-house"></i>
           </a>
-          <i class="fa-solid fa-chevron-right mx-3 text-xs text-white/50"></i>
+          <i class="fa-duotone fa-chevron-right mx-3 text-xs text-white/50"></i>
           <a href="{{ '/blog/' | relative_url }}" class="hover:text-white transition-colors">Blog</a>
           {% if page.categories.first %}
-          <i class="fa-solid fa-chevron-right mx-3 text-xs text-white/50"></i>
+          <i class="fa-duotone fa-chevron-right mx-3 text-xs text-white/50"></i>
           <span class="text-white/60">{{ page.categories.first }}</span>
           {% endif %}
         </nav>
@@ -112,13 +112,13 @@ layout: default
       {% endif %}
       <div class="flex items-center justify-center gap-6 mt-8 text-gray-400 text-sm">
         <span class="flex items-center">
-          <i class="fa-solid fa-calendar mr-2 text-primary/60"></i>
+          <i class="fa-duotone fa-calendar-days mr-2 text-primary/60"></i>
           <time datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">
             {{ page.date | date: "%d %B %Y" }}
           </time>
         </span>
         <span class="flex items-center">
-          <i class="fa-solid fa-clock mr-2 text-primary/60"></i>
+          <i class="fa-duotone fa-clock mr-2 text-primary/60"></i>
           {{ reading_time }} min de lecture
         </span>
       </div>
@@ -152,7 +152,7 @@ layout: default
       <div class="mt-12 pt-8 border-t border-gray-200">
         <div class="flex flex-wrap items-center gap-2">
           <span class="text-gray-500 text-sm font-medium mr-2">
-            <i class="fa-solid fa-tags mr-1"></i>
+            <i class="fa-duotone fa-tags mr-1"></i>
             Tags:
           </span>
           {% for tag in page.tags %}
@@ -171,7 +171,7 @@ layout: default
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
         <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-          <i class="fa-solid fa-car text-primary text-2xl"></i>
+          <i class="fa-duotone fa-car-side text-primary text-2xl"></i>
         </div>
         <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">
           Prêt à louer votre voiture ?

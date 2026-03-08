@@ -13,16 +13,28 @@
 
 {% if box_type == "warning" %}
   {% assign icon = "fa-duotone fa-triangle-exclamation" %}
+  {% assign icon_color = "text-amber-500" %}
+  {% assign border_color = "from-amber-400 to-amber-500" %}
+  {% assign bg_icon = "bg-amber-50" %}
 {% elsif box_type == "info" %}
   {% assign icon = "fa-duotone fa-circle-info" %}
+  {% assign icon_color = "text-blue-500" %}
+  {% assign border_color = "from-blue-400 to-blue-500" %}
+  {% assign bg_icon = "bg-blue-50" %}
 {% else %}
   {% assign icon = "fa-duotone fa-lightbulb" %}
+  {% assign icon_color = "text-primary" %}
+  {% assign border_color = "from-primary to-primary-dark" %}
+  {% assign bg_icon = "bg-primary/10" %}
 {% endif %}
 
-<div class="bg-gray-50 border-l-4 border-gray-300 rounded-r-lg p-4 flex items-start gap-3">
-  <i class="{{ icon }} text-gray-500 text-lg mt-0.5 flex-shrink-0"></i>
-  <div>
+<div class="bg-white shadow-premium rounded-2xl p-5 flex items-start gap-4 relative overflow-hidden">
+  <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b {{ border_color }}"></div>
+  <div class="w-10 h-10 {{ bg_icon }} rounded-full flex items-center justify-center flex-shrink-0">
+    <i class="{{ icon }} {{ icon_color }} text-lg"></i>
+  </div>
+  <div class="flex-1 min-w-0">
     <p class="font-semibold text-gray-900 text-sm mb-1">{{ box_title }}</p>
-    <p class="text-gray-700 text-sm">{{ include.text }}</p>
+    <p class="text-gray-600 text-sm leading-relaxed">{{ include.text }}</p>
   </div>
 </div>

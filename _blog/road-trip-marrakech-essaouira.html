@@ -15,30 +15,32 @@ author: Younes ENNAJI
 </p>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Informations Générales" %}
+  {% include blog/section-header.html title="Informations Générales" icon="fa-duotone fa-circle-info" %}
 
   <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-    {% include blog/info-card.html label="Distance totale" value="170 km" %}
-    {% include blog/info-card.html label="Temps de trajet" value="3h" %}
-    {% include blog/info-card.html label="Route principale" value="A3 + N8" %}
-    {% include blog/info-card.html label="Péage" value="~36 DH" %}
+    {% include blog/info-card.html label="Distance totale" value="170 km" icon="fa-duotone fa-route" %}
+    {% include blog/info-card.html label="Temps de trajet" value="3h" icon="fa-duotone fa-clock" %}
+    {% include blog/info-card.html label="Route principale" value="A3 + N8" icon="fa-duotone fa-road" %}
+    {% include blog/info-card.html label="Péage" value="~36 DH" icon="fa-duotone fa-coins" %}
   </div>
 
   <div class="grid md:grid-cols-2 gap-4">
-    {% include blog/info-card.html label="Véhicule recommandé" value="Citadine ou SUV" %}
-    {% include blog/info-card.html label="Carburant estimé" value="150-200 DH (A/R)" %}
+    {% include blog/info-card.html label="Véhicule recommandé" value="Citadine ou SUV" icon="fa-duotone fa-car-side" %}
+    {% include blog/info-card.html label="Carburant estimé" value="150-200 DH (A/R)" icon="fa-duotone fa-gas-pump" %}
   </div>
 </section>
 
-<section class="mb-12">
-  {% include blog/section-header.html title="Itinéraire Détaillé - A3 puis N8" %}
+<section class="mb-12" data-controller="blog-timeline">
+  {% include blog/section-header.html title="Itinéraire Détaillé - A3 puis N8" icon="fa-duotone fa-route" %}
 
   <div class="relative">
-    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-gray-200 to-primary"></div>
 
-    <div class="relative pl-12 pb-8">
-      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">▶</div>
-      <div class="bg-white border border-gray-200 rounded-xl p-6">
+    <div class="relative pl-12 pb-8" data-blog-timeline-target="step">
+      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white shadow-lg" data-blog-timeline-target="car">
+        <i class="fa-duotone fa-location-dot text-sm"></i>
+      </div>
+      <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-premium">
         <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Départ : Marrakech</h4>
           <span class="text-primary font-semibold">8h00</span>
@@ -47,20 +49,20 @@ author: Younes ENNAJI
         <div class="bg-gray-50 rounded-lg p-4">
           <h5 class="font-semibold text-gray-900 mb-2 text-sm">Check-list départ :</h5>
           <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-700">
-            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Plein d'essence</li>
-            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Niveaux vérifiés</li>
-            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Bouteilles d'eau (2L/pers)</li>
-            <li class="flex items-start"><span class="text-primary mr-2">✓</span>GPS/maps hors ligne</li>
-            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Lunettes de soleil</li>
-            <li class="flex items-start"><span class="text-primary mr-2">✓</span>Crème solaire</li>
+            <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Plein d'essence</li>
+            <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Niveaux vérifiés</li>
+            <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Bouteilles d'eau (2L/pers)</li>
+            <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>GPS/maps hors ligne</li>
+            <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Lunettes de soleil</li>
+            <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Crème solaire</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="relative pl-12 pb-8">
-      <div class="absolute left-0 w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-      <div class="bg-white border border-gray-200 rounded-xl p-6">
+    <div class="relative pl-12 pb-8" data-blog-timeline-target="step">
+      <div class="absolute left-0 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">1</div>
+      <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-premium">
         <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Péage de Marrakech</h4>
           <span class="text-gray-500">8h15 • 15 km</span>
@@ -73,25 +75,27 @@ author: Younes ENNAJI
       </div>
     </div>
 
-    <div class="relative pl-12 pb-8">
-      <div class="absolute left-0 w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
-      <div class="bg-white border border-gray-200 rounded-xl p-6">
+    <div class="relative pl-12 pb-8" data-blog-timeline-target="step">
+      <div class="absolute left-0 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">2</div>
+      <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-premium">
         <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Aire de Repos de Chichaoua</h4>
           <span class="text-gray-500">9h00 • 50 km</span>
         </div>
         <p class="text-sm text-gray-600 mb-3">Sortie Chichaoua, puis voie express N8 (gratuite) jusqu'à Essaouira. Pause café recommandée (15-20 min)</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Station-service</span>
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Café-restaurant</span>
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Toilettes</span>
-          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Parking gratuit</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-duotone fa-gas-pump mr-1"></i>Station-service</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-duotone fa-mug-hot mr-1"></i>Café-restaurant</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-duotone fa-restroom mr-1"></i>Toilettes</span>
+          <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700"><i class="fa-duotone fa-square-parking mr-1"></i>Parking gratuit</span>
         </div>
       </div>
     </div>
 
-    <div class="relative pl-12">
-      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">🏁</div>
+    <div class="relative pl-12" data-blog-timeline-target="step">
+      <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
+        <i class="fa-duotone fa-flag-checkered text-sm"></i>
+      </div>
       <div class="bg-primary/5 border border-primary/20 rounded-xl p-6">
         <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
           <h4 class="font-bold text-gray-900">Arrivée : Essaouira</h4>
@@ -104,7 +108,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Parkings Recommandés" %}
+  {% include blog/section-header.html title="Parkings Recommandés" icon="fa-duotone fa-square-parking" %}
 
   <div class="grid md:grid-cols-3 gap-4">
     <div class="bg-white border border-gray-200 rounded-xl p-5">
@@ -140,7 +144,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Les Incontournables d'Essaouira" %}
+  {% include blog/section-header.html title="Les Incontournables d'Essaouira" icon="fa-duotone fa-star" %}
 
   {% include blog/image.html src="/assets/images/blog/essaouira-port.jpg" alt="Porte historique du port d'Essaouira avec bateau bleu traditionnel" caption="La porte emblématique du port d'Essaouira" %}
 
@@ -210,7 +214,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Où Manger à Essaouira" %}
+  {% include blog/section-header.html title="Où Manger à Essaouira" icon="fa-duotone fa-utensils" %}
 
   <div class="grid md:grid-cols-2 gap-4">
     <div class="bg-gray-50 rounded-xl p-5">
@@ -240,7 +244,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Budget Estimatif Complet" %}
+  {% include blog/section-header.html title="Budget Estimatif Complet" icon="fa-duotone fa-wallet" %}
 
   <div class="grid md:grid-cols-2 gap-6">
     <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -256,7 +260,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Conseils Pratiques" %}
+  {% include blog/section-header.html title="Conseils Pratiques" icon="fa-duotone fa-lightbulb" %}
 
   <div class="grid md:grid-cols-2 gap-6">
     <div class="space-y-4">
@@ -297,7 +301,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Meilleure Période pour Visiter" %}
+  {% include blog/section-header.html title="Meilleure Période pour Visiter" icon="fa-duotone fa-calendar-days" %}
 
   <div class="overflow-x-auto">
     <table class="w-full text-sm">
@@ -339,7 +343,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="Véhicule Recommandé" %}
+  {% include blog/section-header.html title="Véhicule Recommandé" icon="fa-duotone fa-car-side" %}
 
   <div class="bg-gray-50 rounded-xl p-6">
     <p class="text-gray-700 mb-4">Pour ce road trip, un véhicule économique suffit :</p>
@@ -364,7 +368,7 @@ author: Younes ENNAJI
 </section>
 
 <section class="mb-12">
-  {% include blog/section-header.html title="En Cas de Problème" %}
+  {% include blog/section-header.html title="En Cas de Problème" icon="fa-duotone fa-phone-flip" %}
 
   <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
     <div class="flex items-center gap-2 mb-4">
@@ -397,10 +401,10 @@ author: Younes ENNAJI
   <div class="bg-gray-900 text-white rounded-2xl p-8 text-center">
     <h2 class="text-2xl font-display font-bold mb-4">Pour un Week-end Inoubliable</h2>
     <ul class="text-gray-300 mb-6 space-y-2 text-left max-w-md mx-auto">
-      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Départ tôt le matin (8h)</li>
-      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Journée complète à Essaouira</li>
-      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Retour en fin d'après-midi (17h)</li>
-      <li class="flex items-start"><span class="text-primary mr-2">✓</span>Ou nuit sur place pour le coucher de soleil</li>
+      <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Départ tôt le matin (8h)</li>
+      <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Journée complète à Essaouira</li>
+      <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Retour en fin d'après-midi (17h)</li>
+      <li class="flex items-start"><i class="fa-duotone fa-check text-primary mr-2 mt-0.5"></i>Ou nuit sur place pour le coucher de soleil</li>
     </ul>
     <a href="https://wa.me/212662825804" target="_blank" class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
       <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
