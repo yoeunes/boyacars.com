@@ -12,7 +12,7 @@
     <div class="space-y-4" data-controller="accordion">
       {% for question in site.data.faqs.questions %}
         <div class="border border-gray-200 rounded-xl overflow-hidden" data-accordion-target="item">
-          <button data-action="click->accordion#toggle" class="w-full text-left p-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+          <button data-action="click->accordion#toggle" aria-expanded="false" class="w-full text-left p-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary">
             <span class="font-semibold text-gray-900 pr-4">{{ question.question }}</span>
             <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
           </button>

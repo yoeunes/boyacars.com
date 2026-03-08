@@ -14,11 +14,15 @@ export default class extends Controller {
     this.itemTargets.forEach((item) => {
       const itemContent = item.querySelector('.accordion__content');
       const itemIcon = item.querySelector('button i');
-      
+      const itemButton = item.querySelector('button');
+
       if (itemContent && itemIcon && item !== clickedItem) {
         itemContent.classList.add('max-h-0');
         itemContent.classList.remove('max-h-96');
         itemIcon.classList.remove('rotate-180');
+        if (itemButton) {
+          itemButton.setAttribute('aria-expanded', 'false');
+        }
       }
     });
 
@@ -27,10 +31,12 @@ export default class extends Controller {
       content.classList.add('max-h-0');
       content.classList.remove('max-h-96');
       icon.classList.remove('rotate-180');
+      clickedButton.setAttribute('aria-expanded', 'false');
     } else {
       content.classList.remove('max-h-0');
       content.classList.add('max-h-96');
       icon.classList.add('rotate-180');
+      clickedButton.setAttribute('aria-expanded', 'true');
     }
   }
 }

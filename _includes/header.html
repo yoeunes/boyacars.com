@@ -6,7 +6,7 @@
       </a>
 
       <div class="lg:hidden" data-controller="slidebar">
-        <button class="focus:outline-none p-2" data-action="click->slidebar#toggle">
+        <button class="p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" data-action="click->slidebar#toggle" aria-label="Ouvrir le menu">
           <i class="fa-solid fa-bars text-3xl text-gray-800"></i>
         </button>
       </div>
@@ -35,7 +35,7 @@
   <div class="p-6 h-full flex flex-col">
     <div class="flex items-center justify-between mb-8">
       <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-12">
-      <button class="focus:outline-none p-2" data-action="click->slidebar#toggle">
+      <button class="p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" data-action="click->slidebar#toggle" aria-label="Fermer le menu">
         <i class="fa-solid fa-times text-2xl text-gray-600"></i>
       </button>
     </div>

@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets = ['vehicle', 'count', 'fuelFilter', 'transmissionFilter', 'priceFilter'];
+  static targets = ['vehicle', 'count', 'fuelFilter', 'transmissionFilter', 'priceFilter', 'noResults'];
 
   connect() {
     this.updateCount();
@@ -34,6 +34,7 @@ export default class extends Controller {
     });
 
     this.updateCount(visibleCount);
+    this.toggleEmptyState(visibleCount);
   }
 
   reset() {
@@ -49,5 +50,15 @@ export default class extends Controller {
     }
     const text = count === 1 ? 'véhicule trouvé' : 'véhicules trouvés';
     this.countTarget.textContent = `${count} ${text}`;
+  }
+
+  toggleEmptyState(count) {
+    if (this.hasNoResultsTarget) {
+      if (count === 0) {
+        this.noResultsTarget.classList.remove('hidden');
+      } else {
+        this.noResultsTarget.classList.add('hidden');
+      }
+    }
   }
 }
