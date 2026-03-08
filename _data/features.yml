@@ -1,23 +1,27 @@
-title: "Pourquoi Boyacars ?"
-subtitle: "Location de voiture économique à Marrakech"
-text: "Louez une voiture chez <strong>Boyacars</strong> à Marrakech à des tarifs abordables et profitez d'une gamme variée de voitures adaptées à tous les budgets. Récupérez votre voiture de location à l'aéroport ou dans l'une de nos agences à Marrakech."
-options_text: "Réservez votre voiture chez Boyacars et profitez de nombreux avantages et services gratuits."
+title: "Pourquoi Choisir Boyacars ?"
+subtitle: "L'excellence à Marrakech depuis 2014"
 
 options:
+  - icon: "fa-solid fa-shield-halved"
+    title: "Assurance Tout Risque"
+    description: "Voyagez l'esprit tranquille avec notre assurance complète incluse"
+
   - icon: "fa-solid fa-plane-arrival"
-    title: "Transfert Aéroport"
-
-  - icon: "fa-solid fa-charging-station"
-    title: "Kilométrage illimité"
-
-  - icon: "fa-solid fa-headset"
-    title: "Assistance 24h/24 et 7j/7"
+    title: "Livraison Aéroport"
+    description: "Nous vous accueillons directement à l'aéroport de Marrakech"
 
   - icon: "fa-solid fa-car"
-    title: "Une voiture en bonne état"
+    title: "Véhicules Récents"
+    description: "Une flotte de véhicules modernes et bien entretenus"
 
   - icon: "fa-solid fa-baby-carriage"
-    title: "Siège bébé gratuit"
+    title: "Siège Bébé Gratuit"
+    description: "Équipements bébé fournis sans frais supplémentaires"
 
-  - icon: "fa-solid fa-car-burst"
-    title: "Assurance tout risque"
+  - icon: "fa-solid fa-headset"
+    title: "Support 24/7"
+    description: "Une équipe disponible à tout moment pour vous assister"
+
+  - icon: "fa-solid fa-road"
+    title: "Kilométrage Illimité"
+    description: "Explorez le Maroc sans limite de distance"

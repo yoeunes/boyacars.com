@@ -1,22 +1,22 @@
-<section class="relative mt-8 bg-opacity-50 bg-cover bg-bottom py-16">
-  <img src="/assets/images/backgrounds/mountains-background.png" class="absolute -z-10 h-full w-full object-cover" alt="Background" loading="lazy">
-
-  <div class="container mx-auto px-4">
-    <div class="mb-8 text-center">
-      <div class="mb-2 text-lg font-semibold">{{ site.data.features.subtitle }}</div>
-      <h2 class="mb-2 text-4xl font-bold uppercase tracking-widest">{{ site.data.features.title }}</h2>
-      <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
-      <p class="mt-4 mb-2 text-lg">{{ site.data.features.text }}</p>
-      <p class="text-lg font-semibold">{{ site.data.features.options_text }}</p>
+<section class="py-20 bg-gray-50 animate-fade-in">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+        {{ site.data.features.title }}
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        {{ site.data.features.subtitle }}
+      </p>
     </div>
 
-    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for option in site.data.features.options %}
-        <div class="flex items-center rounded-full px-4 py-4 shadow transition-colors duration-200 hover:bg-primary hover:text-white bg-white">
-          <div class="mr-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-200">
-            <i class="{{ option.icon }} text-primary font-semibold text-3xl"></i>
+        <div class="bg-white rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:border-gold hover:shadow-premium group">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-xl mb-5 group-hover:bg-primary transition-colors duration-300">
+            <i class="{{ option.icon }} text-3xl text-primary group-hover:text-white transition-colors"></i>
           </div>
-          <div class="flex-1 text-xl lg:text-2xl">{{ option.title }}</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{{ option.title }}</h3>
+          <p class="text-gray-600">{{ option.description }}</p>
         </div>
       {% endfor %}
     </div>

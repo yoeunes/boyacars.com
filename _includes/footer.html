@@ -1,37 +1,37 @@
-<footer class="bg-cover bg-left-bottom text-white relative py-16">
-  <img src="/assets/images/backgrounds/footer-background.jpg" class="absolute inset-0 h-full w-full object-cover brightness-50" alt="Footer background" loading="lazy">
-
-  <div class="px-4 py-24 container relative mx-auto flex flex-col">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-content-stretch">
-      <!-- About -->
-      <div>
-        <h2 class="text-2xl font-bold mb-4">{{ site.data.footer.title }}</h2>
-        <p>{{ site.data.footer.subtitle }}</p>
-        <p class="mt-2">{{ site.data.footer.description }}</p>
-        <div class="mt-4 space-y-2">
-          <div class="flex items-center">
-            <i class="fa-solid fa-envelope text-primary mr-2"></i>
-            <a href="mailto:{{ site.data.site.contact.email }}" class="text-white hover:underline">{{ site.data.site.contact.email_display }}</a>
+<footer class="bg-gray-900 text-white py-16">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="md:col-span-2">
+        <img src="{{ site.data.site.logo_light }}" alt="{{ site.data.site.name }}" class="h-12 mb-6">
+        <p class="text-gray-400 text-lg mb-6">
+          Boyacars - Location de voitures premium à Marrakech depuis 2014. Service professionnel, véhicules récents, et satisfaction client garantie.
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-phone text-primary mr-3"></i>
+            <a href="tel:{{ site.data.site.contact.phone_raw }}" class="hover:text-primary transition-colors">
+              {{ site.data.site.contact.phone }}
+            </a>
           </div>
-          <div class="flex items-center">
-            <i class="fa-solid fa-phone text-primary mr-2"></i>
-            <a href="tel:{{ site.data.site.contact.phone_raw }}" class="text-white hover:underline">{{ site.data.site.contact.phone }}</a>
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-envelope text-primary mr-3"></i>
+            <a href="mailto:{{ site.data.site.contact.email }}" class="hover:text-primary transition-colors">
+              {{ site.data.site.contact.email_display }}
+            </a>
           </div>
-          <div class="flex items-center">
-            <i class="fa-solid fa-clock text-primary mr-2"></i>
-            <span>{{ site.data.footer.availability }}</span>
+          <div class="flex items-center text-gray-300">
+            <i class="fa-solid fa-location-dot text-primary mr-3"></i>
+            <span>{{ site.data.site.contact.address }}</span>
           </div>
         </div>
       </div>
 
-      <!-- Navigation -->
-      <div class="ml-0 md:ml-20">
-        <h2 class="text-2xl font-bold mb-4">Navigation</h2>
-        <div class="w-16 h-1 bg-primary mb-4"></div>
-        <ul class="mt-4 space-y-2">
+      <div>
+        <h3 class="text-lg font-bold mb-6">Navigation</h3>
+        <ul class="space-y-3">
           {% for item in site.data.navigation.main %}
             <li>
-              <a class="text-white font-semibold hover:text-primary transition-colors duration-200 ease-in-out uppercase" href="{{ item.url }}">
+              <a href="{{ item.url }}" class="text-gray-400 hover:text-primary transition-colors">
                 {{ item.title }}
               </a>
             </li>
@@ -39,51 +39,22 @@
         </ul>
       </div>
 
-      <!-- Locations 1 -->
       <div>
-        <h2 class="text-2xl font-bold mb-4">Nos Villes</h2>
-        <div class="w-16 h-1 bg-primary mb-4"></div>
-        <ul class="mt-4 space-y-2">
-          {% assign half = site.data.cities.size | divided_by: 2 %}
-          {% for city in site.data.cities limit: 4 %}
-            <li>
-              <a class="text-white hover:text-primary transition-colors duration-200 ease-in-out" href="/parc/">
-                Location de voiture à {{ city }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <!-- Locations 2 -->
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Autres Villes</h2>
-        <div class="w-16 h-1 bg-primary mb-4"></div>
-        <ul class="mt-4 space-y-2">
-          {% for city in site.data.cities offset: 4 %}
-            <li>
-              <a class="text-white hover:text-primary transition-colors duration-200 ease-in-out" href="/parc/">
-                Location de voiture à {{ city }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+        <h3 class="text-lg font-bold mb-6">Contact</h3>
+        <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 w-full justify-center">
+          <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
+          WhatsApp
+        </a>
       </div>
     </div>
 
-    <!-- WhatsApp CTA -->
-    <div class="mt-10 flex justify-center">
-      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-        <i class="fa-brands fa-whatsapp text-2xl mr-3"></i>
-        <span>Réserver maintenant sur WhatsApp</span>
-      </a>
+    <div class="border-t border-gray-800 pt-8">
+      <p class="text-center text-gray-500 text-sm">
+        © {{ 'now' | date: "%Y" }} {{ site.data.site.name }}. Tous droits réservés.
+      </p>
     </div>
-
-    <p class="text-center mt-10 text-sm">
-      {{ site.data.footer.copyright }}
-    </p>
   </div>
 </footer>

@@ -1,28 +1,32 @@
-<section class="container mx-auto my-16 text-center animate-fade-in px-4">
-  <div class="text-center mb-8">
-    <h2 class="text-4xl uppercase font-bold text-gray-800 tracking-widest mb-2">{{ site.data.reviews.title }}</h2>
-    <div class="w-16 h-1 bg-primary mx-auto"></div>
-  </div>
+<section class="py-20 bg-white animate-fade-in">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+        {{ site.data.reviews.title }}
+      </h2>
+    </div>
 
-  <div class="reviews mt-16" data-controller="swiper" data-swiper-slides-per-view-value="2" data-swiper-space-between-value="20">
-    <div class="swiper-wrapper">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {% for review in site.data.reviews.reviews %}
-        <div class="swiper-slide w-full md:w-1/2 flex flex-col items-center justify-center text-center px-4 pb-8">
-          <p class="reviews__quote pt-10 pl-16 pr-8 pb-6 text-left relative bg-gray-200 font-medium rounded-lg shadow-md">
-            <i class="fa-solid fa-quote-left absolute left-0 top-0 ml-5 mt-5 text-2xl text-primary"></i>
-            {{ review.comment }}
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-gold transition-all duration-300">
+          <div class="flex items-center mb-4">
+            {% for i in (1..5) %}
+              <i class="fa-solid fa-star text-gold text-lg"></i>
+            {% endfor %}
+          </div>
+
+          <p class="text-gray-700 text-lg mb-6 italic">
+            "{{ review.comment }}"
           </p>
-          <div class="flex items-center mt-4">
-            <img src="{{ review.picture }}" class="w-10 h-10 ml-10 rounded-full" alt="Photo de profile de {{ review.name }}" loading="lazy">
+
+          <div class="flex items-center">
+            <img src="{{ review.picture }}" class="w-12 h-12 rounded-full object-cover" alt="{{ review.name }}" loading="lazy">
             <div class="ml-4">
-              <p class="font-semibold">{{ review.name }}</p>
-              <ul class="flex items-center">
-                <li><i class="fa-solid fa-star text-primary"></i></li>
-                <li><i class="fa-solid fa-star text-primary"></i></li>
-                <li><i class="fa-solid fa-star text-primary"></i></li>
-                <li><i class="fa-solid fa-star text-primary"></i></li>
-                <li><i class="fa-solid fa-star text-primary"></i></li>
-              </ul>
+              <div class="font-semibold text-gray-900">{{ review.name }}</div>
+              <div class="text-sm text-gray-600">{{ review.location }}</div>
+              <div class="text-xs text-gray-500 mt-1">
+                <i class="fa-solid fa-car text-primary mr-1"></i> {{ review.vehicle }} • {{ review.date }}
+              </div>
             </div>
           </div>
         </div>

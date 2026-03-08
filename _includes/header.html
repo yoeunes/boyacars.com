@@ -1,66 +1,62 @@
-{% assign isHome = page.layout == 'home' %}
-
-<header class="{% if isHome %}header_main{% endif %}">
-  <!-- Main nav -->
-  <div class="{% if isHome %}absolute text-white{% endif %} container mx-auto left-0 right-0 flex justify-between items-center mt-2 px-4 py-4 z-10">
-    <a href="/">
-      {% if isHome %}
-        <img src="{{ site.data.site.logo_light }}" alt="{{ site.data.site.name }}" class="h-16">
-      {% else %}
-        <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-16">
-      {% endif %}
-    </a>
-
-    <!-- Mobile menu button -->
-    <div class="lg:hidden" data-controller="slidebar">
-      <button class="focus:outline-none js-toggle-mobile-slidebar" data-action="click->slidebar#toggle">
-        <i class="fa-solid fa-bars text-4xl {% if isHome %}text-white{% else %}text-gray-800{% endif %}"></i>
-      </button>
-    </div>
-
-    <!-- Desktop nav -->
-    <nav class="hidden lg:flex relative flex-1 flex flex-wrap items-center content-between justify-end">
-      <ul class="flex flex-wrap list-none p-0 pl-0 mb-0">
-        {% for item in site.data.navigation.main %}
-          <li class="py-2 px-4 {% if page.url == item.url %}border-solid border-b-4 border-primary{% endif %}">
-            <a title="{{ item.title }}" href="{{ item.url }}" class="{% if isHome %}text-white{% else %}text-gray-800{% endif %} font-semibold uppercase tracking-widest hover:text-primary transition-colors">
-              {{ item.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-      <!-- WhatsApp CTA in header -->
-      <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="ml-6 inline-flex items-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
-        <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
-        <span>Réserver</span>
+<header class="sticky top-0 bg-white shadow-sm z-50 transition-shadow duration-300">
+  <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <a href="/" class="flex items-center">
+        <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-12">
       </a>
-    </nav>
+
+      <div class="lg:hidden" data-controller="slidebar">
+        <button class="focus:outline-none p-2" data-action="click->slidebar#toggle">
+          <i class="fa-solid fa-bars text-3xl text-gray-800"></i>
+        </button>
+      </div>
+
+      <nav class="hidden lg:flex items-center space-x-8">
+        {% for item in site.data.navigation.main %}
+          <a href="{{ item.url }}" class="text-gray-700 font-medium hover:text-primary transition-colors relative group">
+            {{ item.title }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full {% if page.url == item.url %}w-full{% endif %}"></span>
+          </a>
+        {% endfor %}
+        
+        <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:shadow-lg">
+          <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+          <span>Réserver</span>
+        </a>
+      </nav>
+    </div>
   </div>
 </header>
 
-<!-- Mobile slidebar -->
-<div class="mobile-slidebar fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300" data-slidebar-target="slidebar">
-  <div class="p-6">
-    <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-12 mb-8">
-    <nav>
+<div class="mobile-slidebar fixed inset-y-0 left-0 w-72 bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300" data-slidebar-target="slidebar">
+  <div class="p-6 h-full flex flex-col">
+    <div class="flex items-center justify-between mb-8">
+      <img src="{{ site.data.site.logo }}" alt="{{ site.data.site.name }}" class="h-12">
+      <button class="focus:outline-none p-2" data-action="click->slidebar#toggle">
+        <i class="fa-solid fa-times text-2xl text-gray-600"></i>
+      </button>
+    </div>
+    
+    <nav class="flex-1">
       <ul class="space-y-4">
         {% for item in site.data.navigation.main %}
           <li>
-            <a href="{{ item.url }}" class="text-gray-800 font-semibold uppercase tracking-wide hover:text-primary transition-colors">
+            <a href="{{ item.url }}" class="block text-gray-800 font-medium py-2 hover:text-primary transition-colors">
               {{ item.title }}
             </a>
           </li>
         {% endfor %}
       </ul>
     </nav>
-    <div class="mt-8 pt-8 border-t border-gray-200">
+    
+    <div class="pt-6 border-t border-gray-200">
       <a href="https://wa.me/{{ site.data.site.contact.whatsapp }}"
          target="_blank"
          rel="noopener noreferrer"
-         class="flex items-center justify-center bg-[#25D366] hover:bg-[#20BA5C] text-white font-semibold py-3 px-4 rounded-full transition-colors">
+         class="flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-4 rounded-full transition-colors w-full">
         <i class="fa-brands fa-whatsapp text-2xl mr-2"></i>
         <span>Réserver sur WhatsApp</span>
       </a>

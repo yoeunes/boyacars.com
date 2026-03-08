@@ -1,18 +1,34 @@
-title: "Témoignages"
+title: "Ce que disent nos clients"
 
 reviews:
-  - name: "Salma MOURAD"
-    picture: "/assets/images/reviewers/salma-mourad.jpg"
-    comment: "J'ai été très satisfait de la location de voiture avec BoyaCars. Le processus de réservation était simple et rapide, et la voiture était en excellent état. Le personnel était très sympathique et serviable. Je recommande fortement cette agence de location de voitures."
-
-  - name: "Younes KHOUBZA"
-    picture: "/assets/images/reviewers/younes-khoubza.jpg"
-    comment: "Je suis un client régulier de BoyaCars et je suis toujours satisfait de leur service. Les prix sont compétitifs et les voitures sont en bon état. Le personnel est amical et professionnel. Je recommande vivement cette agence de location de voitures."
-
-  - name: "Mohamed OTHMANI"
+  - name: "Mohammed Khalifi"
+    location: "Casablanca, Maroc"
+    vehicle: "Peugeot 208"
+    date: "Mars 2024"
+    rating: 5
     picture: "/assets/images/reviewers/mohamed-othmani.jpg"
-    comment: "J'ai loué une voiture chez BoyaCars pour un voyage en famille et j'ai été très satisfait de l'expérience. La voiture était propre et en excellent état, et le personnel était très serviable. Les prix étaient également très compétitifs. Je recommande BoyaCars à tous ceux qui cherchent une location de voiture fiable et abordable."
+    comment: "Excellent service ! J'ai loué une Peugeot 208 pour le week-end. La voiture était propre, récente et en parfait état. Livraison à l'aéroport sans aucun souci. Je recommande vivement Boyacars."
 
-  - name: "Khalid Dahman"
+  - name: "Sarah Martinez"
+    location: "Paris, France"
+    vehicle: "Dacia Duster"
+    date: "Février 2024"
+    rating: 5
+    picture: "/assets/images/reviewers/salma-mourad.jpg"
+    comment: "Très satisfaite de ma location pour explorer la région de Marrakech. Le Duster était parfait pour les routes de montagne. Prix transparent, pas de mauvaise surprise. Merci !"
+
+  - name: "Ahmed Bennani"
+    location: "Rabat, Maroc"
+    vehicle: "Range Rover Evoque"
+    date: "Janvier 2024"
+    rating: 5
     picture: "/assets/images/reviewers/khalid-dahman.jpg"
-    comment: "Je suis très satisfait de mon expérience avec BoyaCars. Le processus de réservation était simple et facile, et la voiture était en excellent état. Le personnel était également très sympathique et serviable. Je recommande cette agence de location de voitures à tous ceux qui cherchent un service de qualité à un prix raisonnable."
+    comment: "Service premium pour un véhicule premium. L'Evoque était comme neuve. L'équipe est très professionnelle et disponible 24/7 comme promis. Mon choix pour mes déplacements professionnels."
+
+  - name: "Fatima Zahra"
+    location: "Marrakech, Maroc"
+    vehicle: "Citroën C3"
+    date: "Décembre 2023"
+    rating: 5
+    picture: "/assets/images/reviewers/younes-khoubza.jpg"
+    comment: "Location mensuelle pour mon travail. Très bon rapport qualité-prix. Le kilométrage illimité m'a permis de bouger librement. Service client réactif et à l'écoute."
