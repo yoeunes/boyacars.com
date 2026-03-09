@@ -1,0 +1,78 @@
+{% comment %}
+  Responsive Image Component for Blog
+
+  Usage:
+  {% include blog/responsive-image.html
+     src="road-trip-ouarzazate"
+     alt="Road trip vers Ouarzazate"
+     size="full"
+     class="w-full h-full object-cover"
+  %}
+
+  Parameters:
+    src: Image filename without extension (required)
+    alt: Alt text for accessibility (required)
+    size: "thumb" (400px), "mobile" (800px), or "full" (1280px) - default: "full"
+    class: Optional CSS classes for the img element
+    width: Optional width attribute
+    height: Optional height attribute
+    loading: "lazy" or "eager" - default: "lazy"
+    caption: Optional caption text
+{% endcomment %}
+
+{% assign img_name = include.src %}
+{% assign img_size = include.size | default: "full" %}
+{% assign img_loading = include.loading | default: "lazy" %}
+{% assign base_path = "/assets/images/blog/optimized/" %}
+
+{% if include.caption %}
+<figure class="my-8 {{ include.figure_class }}">
+{% endif %}
+
+<picture>
+  {% comment %} WebP sources for modern browsers {% endcomment %}
+  {% if img_size == "full" %}
+  <source
+    srcset="{{ base_path }}{{ img_name }}-mobile.webp"
+    type="image/webp"
+    media="(max-width: 768px)"
+  >
+  <source
+    srcset="{{ base_path }}{{ img_name }}-full.webp"
+    type="image/webp"
+  >
+  {% comment %} JPG fallback sources {% endcomment %}
+  <source
+    srcset="{{ base_path }}{{ img_name }}-mobile.jpg"
+    media="(max-width: 768px)"
+  >
+  {% elsif img_size == "thumb" %}
+  <source
+    srcset="{{ base_path }}{{ img_name }}-thumb.webp"
+    type="image/webp"
+  >
+  {% elsif img_size == "mobile" %}
+  <source
+    srcset="{{ base_path }}{{ img_name }}-mobile.webp"
+    type="image/webp"
+  >
+  {% endif %}
+
+  {% comment %} Fallback img element {% endcomment %}
+  <img
+    src="{{ base_path }}{{ img_name }}-{{ img_size }}.jpg"
+    alt="{{ include.alt }}"
+    class="{{ include.class }}"
+    loading="{{ img_loading }}"
+    {% if include.width %}width="{{ include.width }}"{% endif %}
+    {% if include.height %}height="{{ include.height }}"{% endif %}
+    {% if include.itemprop %}itemprop="{{ include.itemprop }}"{% endif %}
+  >
+</picture>
+
+{% if include.caption %}
+  <figcaption class="text-center text-sm text-gray-500 mt-3 italic">
+    {{ include.caption }}
+  </figcaption>
+</figure>
+{% endif %}

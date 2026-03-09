@@ -13,12 +13,23 @@
   <!-- Image Container -->
   <div class="relative aspect-[16/9] overflow-hidden">
     {% if post.image %}
+    {% if post.image contains "http://" or post.image contains "https://" %}
     <img
-      src="{{ post.image | relative_url }}"
+      src="{{ post.image }}"
       alt="{{ post.title }}"
       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       loading="lazy"
     >
+    {% else %}
+    {% assign img_path = post.image | split: "/" | last | split: "." | first %}
+    {% include blog/responsive-image.html
+       src=img_path
+       alt=post.title
+       size="thumb"
+       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+       loading="lazy"
+    %}
+    {% endif %}
     {% else %}
     <div class="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
       <i class="fa-solid fa-car text-4xl text-primary/60"></i>

@@ -1,30 +1,64 @@
 {% comment %}
-  Blog Image Component
+  Blog Image Component (Responsive)
 
-  Usage:
+  Usage (new style - recommended):
   {% include blog/image.html
-     src="/assets/images/blog/essaouira-port.jpg"
+     src="essaouira-port"
      alt="Port d'Essaouira"
      caption="Les bateaux bleus du port"
   %}
 
+  Usage (legacy - full path):
+  {% include blog/image.html
+     src="/assets/images/blog/essaouira-port.jpg"
+     alt="Port d'Essaouira"
+  %}
+
   Parameters:
-    src: Image path (required)
+    src: Image filename (without extension) OR full path (legacy support)
     alt: Alt text for accessibility (required)
     caption: Optional caption below the image
     class: Optional additional CSS classes
+    size: "thumb", "mobile", or "full" (default: "full")
 {% endcomment %}
 
-<figure class="my-8 {{ include.class }}">
-  <img
-    src="{{ include.src }}"
-    alt="{{ include.alt }}"
-    class="w-full rounded-xl shadow-lg"
-    loading="lazy"
-  >
-  {% if include.caption %}
-  <figcaption class="text-center text-sm text-gray-500 mt-3 italic">
-    {{ include.caption }}
-  </figcaption>
-  {% endif %}
-</figure>
+{% comment %} Extract image name from path if full path provided {% endcomment %}
+{% if include.src contains "/" %}
+  {% assign img_name = include.src | split: "/" | last | split: "." | first %}
+{% else %}
+  {% assign img_name = include.src %}
+{% endif %}
+
+{% comment %} Check if this is an external URL {% endcomment %}
+{% if include.src contains "http://" or include.src contains "https://" %}
+  {% comment %} External image - render directly without responsive processing {% endcomment %}
+  <figure class="my-8 {{ include.class }}">
+    <img
+      src="{{ include.src }}"
+      alt="{{ include.alt }}"
+      class="w-full rounded-xl shadow-lg"
+      loading="lazy"
+    >
+    {% if include.caption %}
+    <figcaption class="text-center text-sm text-gray-500 mt-3 italic">
+      {{ include.caption }}
+    </figcaption>
+    {% endif %}
+  </figure>
+{% else %}
+  {% comment %} Local image - use responsive processing {% endcomment %}
+  <figure class="my-8 {{ include.class }}">
+    {% include blog/responsive-image.html
+       src=img_name
+       alt=include.alt
+       size=include.size
+       class="w-full rounded-xl shadow-lg"
+       loading="lazy"
+    %}
+    {% if include.caption %}
+    <figcaption class="text-center text-sm text-gray-500 mt-3 italic">
+      {{ include.caption }}
+    </figcaption>
+    {% endif %}
+  </figure>
+{% endif %}
